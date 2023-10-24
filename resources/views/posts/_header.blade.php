@@ -6,7 +6,7 @@
     <div class="flex justify-center mt-5 space-y-2 lg:space-y-0 lg:space-x-4">
 
         <!--  Category -->
-        <div class="relative items-center bg-gray-100 lg:flex-inline rounded-xl">
+        <div class="relative flex items-center bg-gray-100 lg:flex-inline rounded-xl">
             <x-category-dropdown />
 
 
@@ -35,11 +35,12 @@
         </div> --}}
 
         <!-- Search -->
-        <div class="relative flex items-center px-3 py-2 bg-gray-100 lg:inline-flex rounded-xl">
+        <div class="relative flex items-center px-3 bg-gray-100 lg:inline-flex rounded-xl">
             <form method="GET" action="/">
                 <input type="hidden" name="category" value="{{ request('category') }}">
                 <input type="text" name="search" placeholder="Find something"
-                    class="text-sm font-semibold placeholder-black bg-transparent" value="{{ request('search') }}">
+                    class="text-sm font-semibold placeholder-black bg-transparent border-none focus:outline-none focus:ring-0"
+                    value="{{ request('search') }}">
             </form>
         </div>
     </div>

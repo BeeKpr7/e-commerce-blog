@@ -1,20 +1,33 @@
 <!doctype html>
 
-<title>Laravel From Scratch Blog</title>
-<link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
-<link rel="preconnect" href="https://fonts.gstatic.com">
-<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
-<script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+<head>
+    <title>Laravel From Scratch Blog</title>
 
-<body style="font-family: Open Sans, sans-serif;">
+    @vite(['resources/css/app.css', 'resources/js/app.js'])
+</head>
+
+<body>
     <section class="px-6 py-8">
         <nav class="md:flex md:justify-between md:items-center">
             <div>
-                <a href="/">
-                    <img src="{{ url('/') }}/images/serpolet.svg" alt="Laracasts Logo" width="250"
-                        height="16">
+                <a href="{{ url('/') }}">
+                    <img src="{{ url('/') }}/images/serpolet.svg" alt="Laracasts Logo" width="250" height="16">
                 </a>
             </div>
+            {{-- Language Dropdown --}}
+            <x-dropdown>
+                    <x-slot name="trigger">
+                        <div class="flex items-center w-14 space-x-4">
+                            <div class="font-medium dark:text-white">
+                                <div>{{app()->getLocale()}}</div>
+                            </div>
+                        </div>
+                    </x-slot>
+
+                    @foreach(config('localization.locales') as $locale)
+                        <x-dropdown-item href="{{ route('localization',['locale' => $locale]) }}" :active="$locale == app()->getLocale()">{{$locale}}</x-dropdown-item>
+                    @endforeach
+            </x-dropdown>
 
             <div class="mt-8 md:mt-0">
                 @auth
@@ -22,7 +35,7 @@
                         <x-slot name="trigger">
                             <div class="flex items-center space-x-4">
                                 <div class="font-medium dark:text-white">
-                                    <div>Welcome {{ auth()->user()->name }}</div>
+                                    <div>{{__('Welcome')}} {{ auth()->user()->name }}</div>
                                 </div>
                                 <img class="w-10 h-10 rounded-full" src="https://i.pravatar.cc/150?u={{ auth()->id() }}"
                                     alt="">
@@ -45,10 +58,9 @@
                     </x-dropdown>
                 @else
                     <a href="/register"
-                        class="px-5 py-3 ml-3 text-xs font-semibold text-white uppercase bg-gray-500 rounded-full">Register</a>
+                        class="px-5 py-3 ml-3 text-xs font-semibold text-white uppercase bg-gray-500 rounded-full">{{__('Register')}}</a>
                     <a href="/login"
-                        class="px-5 py-3 ml-3 text-xs font-semibold text-white uppercase bg-gray-500 rounded-full">Log
-                        In</a>
+                        class="px-5 py-3 ml-3 text-xs font-semibold text-white uppercase bg-gray-500 rounded-full">{{__('Log in')}}</a>
                     <a href="#subscribe"
                         class="px-5 py-3 ml-3 text-xs font-semibold text-white uppercase bg-blue-500 rounded-full">
                         Subscribe for Updates
@@ -59,7 +71,6 @@
 
             </div>
         </nav>
-
         {{ $slot }}
 
         <footer class="px-10 py-16 mt-16 text-center bg-gray-100 border border-black border-opacity-5 rounded-xl">
@@ -78,7 +89,7 @@
                             </label>
 
                             <input id="email" name="email" type="email" placeholder="Your email address"
-                                class="py-2 pl-4 lg:bg-transparent lg:py-0 focus-within:outline-none" required>
+                                class="py-2 pl-4 border-0 lg:bg-transparent lg:py-0 focus:ring-0" required>
                             @error('email')
                                 <p class="mt-1 text-xs text-red-500">{{ $message }}</p>
                             @enderror

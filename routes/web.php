@@ -6,18 +6,9 @@ use App\Http\Controllers\PostController;
 use App\Http\Controllers\CommentController;
 use App\Http\Controllers\NewsletterController;
 use App\Http\Controllers\AdminPostController;
+use App\Http\Controllers\LocalizationController;
 
-
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider and all of them will
-| be assigned to the "web" middleware group. Make something great!
-|
-*/
+Route::get('/localization/{locale}', LocalizationController::class)->name('localization');
 
 Route::get('/',[PostController::class,'index'])->name('home');
 
