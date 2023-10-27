@@ -10,11 +10,6 @@ use Illuminate\Validation\Rule;
 
 class AdminPostController extends Controller
 {
-    public function __construct()
-    {
-        $this->middleware('can:admin');
-    }
-    
     public function index()
     {
         return view('admin.posts.index',[
@@ -31,7 +26,6 @@ class AdminPostController extends Controller
 
     public function store ()
     {
-       
         Post::create(array_merge($this->validatePost(),[
             'user_id' => auth()->id(),
             'image' => request()->file('image')->store('/posts/images')

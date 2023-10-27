@@ -1,7 +1,7 @@
 @props(['comments', 'post'])
 <section class="py-8 bg-white dark:bg-gray-900 lg:py-16">
     <div class="max-w-2xl px-4 mx-auto">
-        <h2 class="mb-8 text-2xl font-bold text-center lg:text-3xl">Comments</h2>
+        <h2 class="mb-8 text-2xl font-bold text-center lg:text-3xl">{{ __('post.comment.title') }}</h2>
         @include('posts._add-comment-form')
         @foreach ($comments as $comment)
             <article class="p-6 mb-6 text-base bg-white rounded-lg dark:bg-gray-900">

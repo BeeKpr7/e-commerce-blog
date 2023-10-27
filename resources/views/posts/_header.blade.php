@@ -1,6 +1,6 @@
 <header class="max-w-xl mx-auto mt-20 text-center">
     <h1 class="text-4xl">
-        Latest <span class="text-blue-500">Laravel From Scratch</span> News
+        {{ __('Latest') }}
     </h1>
 
     <div class="flex justify-center mt-5 space-y-2 lg:space-y-0 lg:space-x-4">
@@ -38,7 +38,7 @@
         <div class="relative flex items-center px-3 bg-gray-100 lg:inline-flex rounded-xl">
             <form method="GET" action="/">
                 <input type="hidden" name="category" value="{{ request('category') }}">
-                <input type="text" name="search" placeholder="Find something"
+                <input type="text" name="search" placeholder="{{ __('post.button.search') }}"
                     class="text-sm font-semibold placeholder-black bg-transparent border-none focus:outline-none focus:ring-0"
                     value="{{ request('search') }}">
             </form>

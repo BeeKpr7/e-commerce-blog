@@ -21,7 +21,7 @@
                     </h1>
 
                     <span class="block mt-2 text-xs text-gray-400">
-                        Published <time>{{ $post->created_at->diffForhumans() }}</time>
+                        {{ __('post.infos.published') }} <time>{{ $post->created_at->diffForhumans() }}</time>
                     </span>
                 </div>
             </header>
@@ -42,8 +42,7 @@
 
                 <div class="hidden lg:block">
                     <a href="/posts/{{ $post->slug }}"
-                        class="px-8 py-2 text-xs font-semibold transition-colors duration-300 bg-gray-200 rounded-full hover:bg-gray-300">Read
-                        More</a>
+                        class="px-8 py-2 text-xs font-semibold transition-colors duration-300 bg-gray-200 rounded-full hover:bg-gray-300">{{ __('post.infos.read-more') }}</a>
                 </div>
             </footer>
         </div>
