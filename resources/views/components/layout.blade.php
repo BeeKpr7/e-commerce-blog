@@ -1,7 +1,7 @@
 <!doctype html>
 
 <head>
-    <title>Laravel From Scratch Blog</title>
+    <title>Miellerie Serpolet</title>
 
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>

@@ -23,7 +23,7 @@ class AuthServiceProvider extends ServiceProvider
     public function boot(): void
     {
         Gate::define('admin',function($user){
-	        return $user->email === 'etienne@laravel.fr';
+	        return $user->email === 'etienne@laravel.com';
         });
     }
 }

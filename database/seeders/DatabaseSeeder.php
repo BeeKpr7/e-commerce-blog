@@ -3,10 +3,11 @@
 namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
-use Illuminate\Database\Seeder;
-use App\Models\User;
 use App\Models\Post;
+use App\Models\User;
 use App\Models\Comment;
+use App\Models\Product;
+use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
 {
@@ -16,8 +17,8 @@ class DatabaseSeeder extends Seeder
     public function run(): void
     {
         $user = User::factory()->create([
-            'name' => 'John Doe',
-            'email' => 'john@laravel.fr'
+            'name' => 'Etienne',
+            'email' => 'etienne@laravel.com',
         ]);
 
         Post::factory(5)->create([
@@ -25,5 +26,7 @@ class DatabaseSeeder extends Seeder
         ]);
 
         Comment::factory(10)->create();
+
+        Product::factory(10)->create();
     }
 }
