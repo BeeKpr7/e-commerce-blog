@@ -1,7 +1,14 @@
 <x-layout>
-    <x-setting title="Manage posts">
+    <x-setting title="{{ __('post.title.manage') }}">
 
-        <div class="relative overflow-x-auto shadow-md sm:rounded-lg">
+        <div class="pb-2">
+            <a class="px-4 py-3 font-semibold text-white bg-blue-500 rounded-lg shadow-md hover:bg-blue-800"
+                href="{{ route('posts.create') }}">{{ __('post.title.create') }}</a>
+
+        </div>
+
+        <div class="relative overflow-x-auto shadow-lg sm:rounded-lg">
+
             <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
 
                 <tbody>
@@ -18,7 +25,7 @@
                             </td>
                             <td class="px-6 py-4">
                                 <a href="{{ route('posts.edit', $post) }}"
-                                    class="font-medium text-blue-500 dark:text-blue-700 hover:underline">Edit</a>
+                                    class="font-medium text-blue-500 dark:text-blue-700 hover:underline">{{ __('form.button.edit') }}</a>
                             </td>
                             <td class="py-4 pl-0 pr-3">
 
@@ -26,7 +33,7 @@
                                     @csrf
                                     @method('DELETE')
                                     <button
-                                        class="font-medium text-red-500 dark:text-blue-700 hover:underline">Delete</button>
+                                        class="font-medium text-red-500 dark:text-blue-700 hover:underline">{{ __('form.button.delete') }}</button>
                                 </form>
                             </td>
                         </tr>

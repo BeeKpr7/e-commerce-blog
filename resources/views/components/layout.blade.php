@@ -46,7 +46,7 @@
                             <x-dropdown-item href="{{ route('posts.index') }}"
                                 :active="Request::routeIs('posts.index')">{{ __('Dashboard') }}</x-dropdown-item>
                             <x-dropdown-item href="{{ route('posts.create') }}"
-                                :active="request()->is('admin/posts/create')">{{ __('post.button.new') }}</x-dropdown-item>
+                                :active="request()->is('admin/posts/create')">{{ __('post.infos.new') }}</x-dropdown-item>
                         @endadmin
                         <x-dropdown-item class="hover:bg-gray-700">
                             <form id="logoutForm" method="POST" action="/logout" class="inline">

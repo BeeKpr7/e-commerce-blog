@@ -1,22 +1,9 @@
 <?php
 
 return [
-    'button'   => [
-        'new'      => 'Nouvel article',
-        'edit'     => 'Modifier',
-        'delete'   => 'Supprimer',
-        'save'     => 'Enregistrer',
-        'cancel'   => 'Annuler',
-        'create'   => 'Créer',
-        'update'   => 'Mettre à jour',
-        'category' => 'Catégorie',
-        'author'   => 'Auteur',
-        'search'   => 'Rechercher',
-        'all'      => 'Tous',
-
-    ],
-
     'infos' => [
+        'post'     => 'Article',
+        'new'      => 'Nouvel article',
         'category' => 'Catégorie',
         'author'   => 'Auteur',
         'date'     => 'Date',
@@ -30,7 +17,14 @@ return [
     'comment' => [
         'title' => 'Commentaires',
         'to-leave' => 'pour laisser un commentaire',
+        'leave' => 'Laisser un commentaire',
+        'placeholder' => 'Écrivez votre commentaire ici...',
+        'submit' => 'Envoyer',
     ],
-    
 
+    'title' => [
+        'manage' => 'Gérer les articles',
+        'edit'   => 'Modifier l\'article',
+        'create' => 'Créer un article',
+    ]
 ];
