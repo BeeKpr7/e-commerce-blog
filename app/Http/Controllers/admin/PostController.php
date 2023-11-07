@@ -2,15 +2,22 @@
 
 namespace App\Http\Controllers\Admin;
 
-use Illuminate\Http\Request;
 use App\Models\Post;
 use App\Models\Category;
 use Illuminate\Support\Str;
+use Illuminate\Http\Request;
+use App\Services\PostService;
 use Illuminate\Validation\Rule;
+use App\Http\Requests\PostRequest;
 use App\Http\Controllers\Controller;
 
 class PostController extends Controller
 {
+
+    public function __construct(
+        private PostService $postService
+    ){}
+    
     public function index()
     {
         return view('admin.posts.index',[
@@ -25,12 +32,9 @@ class PostController extends Controller
         ]);
     }
 
-    public function store ()
+    public function store (PostRequest $request)
     {
-        Post::create(array_merge($this->validatePost(),[
-            'user_id' => auth()->id(),
-            'image' => request()->file('image')->store('/posts/images')
-        ]));
+        $this->postService->store($request->validated());
 
         return redirect('/admin/posts')->with('success','Post created successfully');
     }
@@ -42,35 +46,17 @@ class PostController extends Controller
         ]);
     }
 
-    public function update(Post $post)
+    public function update(Post $post, PostRequest $request)
     {
-        $attributes=$this->validatePost($post);
-
-        if($attributes['image'] ?? false){
-            $attributes['image'] = request()->file('image')->store('/posts/images');
-        }
-
-        $post->update($attributes);
+        $post = $this->postService->update($post, $request->validated());
 
         return redirect('/posts/'.$post->slug)->with('success','Post updated successfully');
     }
     public function destroy (Post $post)
     {
-        $post->delete();
+        $this->postService->destroy($post);
+
         return back()->with('success','Post deleted successfully');
     }
 
-    protected function validatePost(?Post $post=null)
-    {
-        $post = $post ?? new Post();
-        $attributes = request()->validate([
-            'title' => ['required','min:3','max:255',Rule::unique('posts','title')->ignore($post)],
-            'excerpt' => 'required',
-            'image' => $post->exist ? 'image':'required|image',
-            'body' => 'required',
-            'category_id' => 'required|exists:categories,id',
-        ]);
-        $attributes['slug'] = Str::slug($attributes['title'],'-');
-        return $attributes;
-    }
 }

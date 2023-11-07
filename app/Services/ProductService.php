@@ -8,14 +8,14 @@ class ProductService
     public function store($attributes) : Product
     {
         return  Product::create(array_merge($attributes,[
-            'image' => $attributes['image']->store('/products/images')
+            'image' => $attributes['image']->store('/images/products'.$attributes['name'])
         ]));
     }
 
     public function update(Product $product, $attributes) : Product
     {
         if($attributes['image'] ?? false){
-            $attributes['image'] = $attributes['image']->store('/products/images');
+            $attributes['image'] = $attributes['image']->store('/images/products'.$attributes['name']);
         }
 
         $product->update($attributes);

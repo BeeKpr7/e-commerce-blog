@@ -14,11 +14,12 @@ Route::get('/',[PostController::class,'index'])->name('home');
 
 Route::prefix('posts')->group(function(){
     Route::get('{post}',[PostController::class,'show'])->name('posts.show');
-    Route::post('{post}/comments',[CommentController::class,'store']);
+    Route::post('{post}/comments',[CommentController::class,'store'])->name('comments.store');
 });
 
+
 Route::prefix('products')->group(function(){
-    Route::get('/',[ProductController::class,'index'])->name('products.public.index');
+    Route::get('/',[ProductController::class,'index'])->name('products.all');
     Route::get('{product}',[ProductController::class,'show'])->name('products.show');}
 );
 
