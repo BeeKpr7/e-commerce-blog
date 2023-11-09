@@ -15,7 +15,7 @@ class ProductFactory extends Factory
     {
         return [
             'name' => $this->faker->name,
-            'price' => $this->faker->numberBetween(0, 100),
+            'place' => $this->faker->city,
             'description' => $this->faker->sentence,
             'image' => $this->faker->imageUrl(360, 360, 'animals', true, 'dogs', true),
             'slug' => $this->faker->unique()->slug,

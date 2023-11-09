@@ -3,7 +3,7 @@
 <head>
     <title>Miellerie Serpolet</title>
 
-    @vite(['resources/css/app.css', 'resources/js/app.js'])
+    @vite('resources/js/app.js')
 </head>
 
 <body>
@@ -30,6 +30,10 @@
                 @endforeach
             </x-dropdown>
 
+            <div class="space-x-5">
+                <a href="{{ route('home') }}">Blog</a>
+                <a href="{{ route('products.all') }}">Produits</a>
+            </div>
             <div class="mt-8 md:mt-0">
                 @auth
                     <x-dropdown>
@@ -108,4 +112,5 @@
         </footer>
         <x-flash />
     </section>
+
 </body>

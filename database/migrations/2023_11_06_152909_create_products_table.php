@@ -15,12 +15,12 @@ return new class extends Migration
         Schema::create('products', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->integer('price')->default(0);
-            $table->text('description')->nullable();
+            $table->text('description');
+            $table->string('place');
             $table->string('image')->nullable();
-            $table->string('slug')->unique();
+            $table->string('slug');
             $table->foreignId('category_id')->constrained();
-            $table->string('status')->default(ProductStatus::INACTIVE);
+            $table->string('status')->default(ProductStatus::INACTIVE->value);
             $table->timestamps();
         });
     }

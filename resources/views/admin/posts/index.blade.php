@@ -2,9 +2,8 @@
     <x-setting title="{{ __('post.title.manage') }}">
 
         <div class="pb-2">
-            <a class="px-4 py-3 font-semibold text-white bg-blue-500 rounded-lg shadow-md hover:bg-blue-800"
+            <a class="px-4 py-3 font-semibold text-white bg-teal-600 rounded-lg shadow-md hover:bg-teal-800"
                 href="{{ route('posts.create') }}">{{ __('post.title.create') }}</a>
-
         </div>
 
         <div class="relative overflow-x-auto shadow-lg sm:rounded-lg">

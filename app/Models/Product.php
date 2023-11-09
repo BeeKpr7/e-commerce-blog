@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Models\Sku;
 use App\Enums\ProductStatus;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -12,8 +13,8 @@ class Product extends Model
 
     protected $fillable=[
         'name',
-        'price',
         'description',
+        'place',
         'image',
         'slug',
         'category_id',
@@ -21,7 +22,6 @@ class Product extends Model
     ];
 
     protected $casts=[
-        'price' => 'decimal:2',
         'status' => ProductStatus::class
     ];
 
@@ -35,18 +35,22 @@ class Product extends Model
         return $this->belongsTo(Category::class);
     }
 
+    public function orders ()
+    {
+        return $this->belongsToMany(Order::class)->withPivot('quantity');
+    }
+
+    public function skus ()
+    {
+        return $this->hasMany(Sku::class);
+    }
     public function getRouteKeyName()
     {
         return 'slug';
     }
 
-    public function getPriceAttribute($value)
+    public function setNameAttribute($value)
     {
-        return $value / 100;
-    }
-
-    public function setPriceAttribute($value)
-    {
-        $this->attributes['price'] = $value * 100;
+        $this->attributes['name'] = strtolower($value);
     }
 }

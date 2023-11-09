@@ -16,11 +16,13 @@
                             <th scope="row"
                                 class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
                                 <a href="{{ route('products.show', $product) }}">
-                                    {{ $product->name }}
+                                    {{ ucwords($product->name) }}
                                 </a>
                             </th>
                             <td class="px-6 py-4">
-                                {{ $product->price }}
+                                <x-badge :color="$product->status->color()">
+                                    {{ $product->status->label() }}
+                                </x-badge>
                             </td>
                             <td class="px-6 py-4">
                                 <a href="{{ route('products.edit', $product) }}"
@@ -32,7 +34,7 @@
                                     @csrf
                                     @method('DELETE')
                                     <button
-                                        class="font-medium text-red-500 dark:text-blue-700 hover:underline">{{ __('form.button.edit') }}</button>
+                                        class="font-medium text-red-500 dark:text-blue-700 hover:underline">{{ __('form.button.delete') }}</button>
                                 </form>
                             </td>
                         </tr>

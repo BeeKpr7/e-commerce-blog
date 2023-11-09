@@ -6,7 +6,6 @@
             <div class="space-y-4 md:space-y-6">
 
                 <x-form.input name="name" />
-                <x-form.input name="price" type="number" />
                 <x-form.textarea name="description" />
                 <x-form.input name="image" type="file" />
 

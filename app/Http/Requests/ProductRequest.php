@@ -31,8 +31,8 @@ class ProductRequest extends FormRequest
 
         return [
             'name' => ['required', 'min:6', 'max:255', $rule_name_unique],
-            'price' => ['required', 'integer', 'min:1'],
             'description' => ['required'],
+            'place' => ['required', 'min:6', 'max:255'],
             'image' => request()->isMethod('post') ? 'required|image' : 'image',
             'category_id' => ['required', 'exists:categories,id'],
             'status' => '',

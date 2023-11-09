@@ -5,6 +5,7 @@ namespace Database\Seeders;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use App\Models\Post;
 use App\Models\User;
+use App\Models\Adress;
 use App\Models\Comment;
 use App\Models\Product;
 use Illuminate\Database\Seeder;
@@ -28,5 +29,10 @@ class DatabaseSeeder extends Seeder
         Comment::factory(10)->create();
 
         Product::factory(10)->create();
+
+        Adress::factory(5)->create([
+            'user_id' => $user->id
+        ]);
+        Adress::factory(5)->create();
     }
 }
