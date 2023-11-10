@@ -52,16 +52,19 @@
                     <div class="flex-1">
                         <x-form.input name="image" type="file" :value="old('image', $product->image)" />
                     </div>
-                    <img src="{{ asset('storage/' . $product->image) }}" alt="{{ $product->name }}"
-                        class="w-32 h-32 m-4 rounded">
+                    <img @if (!str_contains($product->image, 'http')) src="{{ asset('storage/' . $product->image) }}" 
+                @else
+                    src="{{ $product->image }}" @endif
+                        alt="{{ $product->name }}" class="w-32 h-32 m-4 rounded">
                 </div>
 
                 <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
                     <thead>
-                        <a x-data="" x-on:click.prevent="$dispatch('open-modal', 'confirm-user-deletion')"
+                        <a x-data="" x-on:click.prevent="$dispatch('open-modal', 'add-variant-form')"
                             class="px-4 py-3 font-semibold text-white bg-teal-600 rounded-lg shadow-md cursor-pointer hover:bg-opacity-90 hover:shadow-lg">{{ __('product.infos.add-variant') . ' ' . $product->name }}</a>
-                        <x-modal name="confirm-user-deletion" :show="$errors->userDeletion->isNotEmpty()" focusable>
-                            @livewire('product-variant.create', ['product' => $product])
+                        <x-modal name="add-variant-form" :show="$errors->variantForm->isNotEmpty()" focusable>
+                            <h1 class="p-10 m-10 ">TEST MODAL</h1>
+                            <input type="text" name="title">
                         </x-modal>
 
                     </thead>

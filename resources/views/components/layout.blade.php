@@ -112,5 +112,4 @@
         </footer>
         <x-flash />
     </section>
-
 </body>
