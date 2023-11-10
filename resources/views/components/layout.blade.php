@@ -4,6 +4,7 @@
     <title>Miellerie Serpolet</title>
 
     @vite('resources/js/app.js')
+    @livewireStyles
 </head>
 
 <body>
@@ -112,4 +113,5 @@
         </footer>
         <x-flash />
     </section>
+    @livewireScripts
 </body>

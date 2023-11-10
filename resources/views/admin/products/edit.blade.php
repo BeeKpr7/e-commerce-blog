@@ -62,10 +62,6 @@
                     <thead>
                         <a x-data="" x-on:click.prevent="$dispatch('open-modal', 'add-variant-form')"
                             class="px-4 py-3 font-semibold text-white bg-teal-600 rounded-lg shadow-md cursor-pointer hover:bg-opacity-90 hover:shadow-lg">{{ __('product.infos.add-variant') . ' ' . $product->name }}</a>
-                        <x-modal name="add-variant-form" :show="$errors->variantForm->isNotEmpty()" focusable>
-                            <h1 class="p-10 m-10 ">TEST MODAL</h1>
-                            <input type="text" name="title">
-                        </x-modal>
 
                     </thead>
 
@@ -92,10 +88,15 @@
                     </tbody>
                 </table>
 
+
                 <div class="flex justify-center">
                     <x-form.button>Update a Product</x-form.button>
                 </div>
             </div>
         </form>
+        <x-modal name="add-variant-form" :show="$errors->variantForm->isNotEmpty()" focusable>
+            @livewire('counter')
+        </x-modal>
+
     </x-setting>
 </x-layout>

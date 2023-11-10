@@ -1,8 +1,9 @@
 import "./bootstrap";
 import "../css/app.css";
 
-import Alpine from "alpinejs";
+//Alpine is imported in the layout file via livewire
+// import Alpine from "alpinejs";
 
-window.Alpine = Alpine;
+// window.Alpine = Alpine;
 
-Alpine.start();
+// Alpine.start();
