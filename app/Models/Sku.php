@@ -10,8 +10,7 @@ class Sku extends Model
 {
     use HasFactory;
 
-    protected array $fillable = [
-        'name',
+    protected $fillable = [
         'stock',
         'price',
         'weight',
@@ -21,5 +20,10 @@ class Sku extends Model
     public function product()
     {
         return $this->belongsTo(Product::class);
+    }
+
+    public function getNameAttribute()
+    {
+        return ucwords($this->product->name).' - '.$this->weight.' g';
     }
 }

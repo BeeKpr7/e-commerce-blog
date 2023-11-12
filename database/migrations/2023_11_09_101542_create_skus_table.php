@@ -13,10 +13,9 @@ return new class extends Migration
     {
         Schema::create('skus', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->integer('stock')->default(0);
-            $table->integer('weight')->default(0);
-            $table->integer('price')->default(0);
+            $table->integer('stock');
+            $table->integer('weight');
+            $table->integer('price');
             $table->foreignId('product_id')->constrained()->onDelete('cascade');
             $table->timestamps();
         });

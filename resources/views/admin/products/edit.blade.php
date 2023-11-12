@@ -66,24 +66,23 @@
                     </thead>
 
                     <tbody>
-                        <tr class="bg-white border-b dark:bg-gray-900 dark:border-gray-700">
-                            <td scope="row"
-                                class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                                <a href="{{ route('products.show', $product) }}">
-                                    {{ $product->name }}
-                                </a>
-                            </td>
-                            <td class="px-6 py-4 text-center">
-                                <x-badge :color="$product->status->color()">
-                                    {{ $product->status->label() }}
-                                </x-badge>
-                            </td>
-                            <td class="px-6 py-4 text-right">
-                                <a href="{{ route('products.edit', $product) }}"
-                                    class="font-medium text-blue-500 dark:text-blue-700 hover:underline">{{ __('form.button.edit') }}</a>
-                            </td>
+                        @foreach ($product->skus as $variant)
+                            <tr class="bg-white border-b dark:bg-gray-900 dark:border-gray-700">
+                                <td class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                                    {{ $variant->name }}
+                                </td>
+                                <td class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                                    {{ $variant->weight }} g
+                                </td>
+                                <td class="px-6 py-4 text-center">
+                                    {{ $variant->stock }} Units
+                                </td>
+                                <td class="px-6 py-4 text-right">
+                                    {{ $variant->price }} euros
+                                </td>
 
-                        </tr>
+                            </tr>
+                        @endforeach
 
                     </tbody>
                 </table>
@@ -95,7 +94,9 @@
             </div>
         </form>
         <x-modal name="add-variant-form" :show="$errors->variantForm->isNotEmpty()" focusable>
-            @livewire('counter')
+
+            {{-- @livewire('product.variant', ['product' => $product]) --}}
+            <livewire:product.variant :$product />
         </x-modal>
 
     </x-setting>
