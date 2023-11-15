@@ -11,6 +11,8 @@ class PostService
             'image' => $attributes['image']->store('/images/posts/'.$attributes['title'])
         ]));
 
+        $post->categories()->attach($attributes['categories']);
+
         return $post;
     }
 
@@ -21,6 +23,8 @@ class PostService
         }
 
         $post->update($attributes);
+
+        $post->categories()->sync($attributes['categories']);
 
         return $post;
     }

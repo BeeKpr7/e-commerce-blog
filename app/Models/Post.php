@@ -16,11 +16,10 @@ class Post extends Model
         'image',
         'body',
         'slug',
-        'category_id',
         'user_id'
     ];
     
-    protected $with = ['author', 'category'];
+    protected $with = ['author','categories'];
 
     public function scopeFilter($query, array $filters)
     { 
@@ -39,7 +38,7 @@ class Post extends Model
                 );
                     //    dd($query->toSql());
         $query->when($filters['category']??false,fn ($query, $category) =>
-                $query->whereHas('category',fn ($query) =>
+                $query->whereHas('categories',fn ($query) =>
                 $query->where('slug',$category)));
                       
         $query->when($filters['author']??false,fn ($query, $author) =>
@@ -57,9 +56,9 @@ class Post extends Model
         return $this->belongsTo(User::class, 'user_id');
     }
 
-    public function category ()
+    public function categories ()
     {
-        return $this->belongsTo(Category::class);
+        return $this->belongsToMany(Category::class);
     }
 
     public function getRouteKeyName()

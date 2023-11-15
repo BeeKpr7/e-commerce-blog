@@ -33,7 +33,7 @@ class PostController extends Controller
     }
 
     public function store (PostRequest $request)
-    {
+    {   
         $this->postService->store($request->validated());
 
         return redirect('/admin/posts')->with('success','Post created successfully');

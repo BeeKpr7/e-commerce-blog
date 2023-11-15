@@ -19,7 +19,6 @@ class PostFactory extends Factory
     {
         return [
             'user_id' => User::factory(),
-            'category_id' => Category::factory(),
             'title' => $this->faker->sentence,
             'slug' => $this->faker->unique()->slug,
             'excerpt' =>'<p>'.implode('</><p>',$this->faker->paragraphs(2)).'</p>',
