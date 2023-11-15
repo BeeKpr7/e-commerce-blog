@@ -1,27 +1,40 @@
-<x-layout>
-    <main class="max-w-6xl mx-auto mt-10 space-y-6 lg:mt-20">
-        <article class="max-w-4xl mx-auto lg:grid lg:grid-cols-12 gap-x-10">
-            <div class="col-span-4 mb-10 lg:text-center lg:pt-14">
-                <img src="{{ asset('storage/' . $post->image) }}" alt="" class="rounded-xl">
+@extends('public.main')
+@section('content')
+    <section class="firstview firstviewAjust ">
+        <aside>
+            <a href="{{ url('/') }}/"><img src="{{ url('') }}/front/images/home/logo-abeille.png"
+                    alt="Logo abeille Apie de lop"></a>
+            <hr>
+            <p>La ruche</p>
+        </aside>
+        <article>
+            <img src="{{ url('') }}/front/images/blog/first-view.jpg" alt="Apiculteur Récoltant Morgan Jaubert">
+            <p>L'incroyable activitée des abeilles</p>
+            <hr>
+        </article>
+    </section>
 
-                <p class="block mt-4 text-xs text-gray-400">
+    <article class="show-article">
+        <a href="{{ route('laruche') }}">{{ __('post.infos.back-blog') }}</a>
+        <h1>{{ $post->title }}</h1>
+        <hr>
+        <div class="content">
+            <figure class="">
+                <img
+                    @if (!str_contains($post->image, 'http')) src="{{ asset('storage/' . $post->image) }}"
+                    @else
+                        src="{{ $post->image }}" @endif />
+                <figcaption class="">
                     {{ __('post.infos.published') }} <time>{{ $post->created_at->diffForHumans() }}</time>
-                </p>
-
-                <div class="flex items-center mt-4 text-sm lg:justify-center">
-                    <img src="/images/lary-avatar.svg" alt="Lary avatar">
-                    <div class="ml-3 text-left">
-                        <a href="/?author={{ $post->author->username }}">
-                            <h5 class="font-bold">{{ $post->author->name }}</h5>
-                        </a>
-                    </div>
-                </div>
+                </figcaption>
+            </figure>
+            <div class="body">
+                {!! $post->body !!}
             </div>
-
-            <div class="col-span-8">
-                <div class="justify-between hidden mb-6 lg:flex">
-                    <a href="/"
-                        class="relative inline-flex items-center text-lg transition-colors duration-300 hover:text-blue-500">
+        </div>
+        {{-- <div class="">
+                <div class="">
+                    <a href="{{ route('laruche') }}" class="">
                         <svg width="22" height="22" viewBox="0 0 22 22" class="mr-2">
                             <g fill="none" fill-rule="evenodd">
                                 <path stroke="#000" stroke-opacity=".012" stroke-width=".5" d="M21 1v20.16H.84V1z">
@@ -38,21 +51,18 @@
                         <x-category-button :category="$post->category" />
                     </div>
                 </div>
+            </div> --}}
+        <div class="author">
+            <img src="https://i.pravatar.cc/150?u={{ $post->author->id }}" alt="Lary avatar">
 
-                <h1 class="mb-10 text-3xl font-bold lg:text-4xl">
-                    {{ $post->title }}
-                </h1>
+            <a href="{{ route('laruche') }}/?author={{ $post->author->username }}">
+                <h5 class="">{{ $post->author->name }}</h5>
+            </a>
 
-                <div class="space-y-4 leading-loose lg:text-lg">
-                    {!! $post->body !!}
-                </div>
-            </div>
+        </div>
 
-
-        </article>
+    </article>
 
 
-        <x-post.comment :comments="$post->comments" :post="$post" />
-
-    </main>
-</x-layout>
+    <x-post.comment :comments="$post->comments" :post="$post" />
+@endsection

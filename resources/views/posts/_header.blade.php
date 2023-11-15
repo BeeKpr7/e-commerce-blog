@@ -36,7 +36,7 @@
 
         <!-- Search -->
         <div class="relative flex items-center px-3 bg-gray-100 lg:inline-flex rounded-xl">
-            <form method="GET" action="/">
+            <form method="GET" action="{{ route('laruche') }}">
                 <input type="hidden" name="category" value="{{ request('category') }}">
                 <input type="text" name="search" placeholder="{{ __('form.button.search') }}"
                     class="text-sm font-semibold placeholder-black bg-transparent border-none focus:outline-none focus:ring-0"

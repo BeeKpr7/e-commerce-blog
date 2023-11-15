@@ -10,7 +10,7 @@
             <ul class="">
                 <li>
                     <a href="{{ route('posts.index') }}"
-                        class="flex text-md mb-4 space-x-3 {{ Request::routeIs('posts.index') ? 'text-blue-500' : '' }} "><svg
+                        class="flex text-md mb-4 space-x-3 {{ Request::routeIs('posts.index') ? 'text-amber-500' : '' }} "><svg
                             aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" width="20"
                             viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                             <path
@@ -22,7 +22,7 @@
                 </li>
                 <li>
                     <a href="{{ route('products.index') }}"
-                        class=" text-md mb-4 flex space-x-3 {{ Request::routeIs('products.index') ? 'text-blue-500' : '' }} "><svg
+                        class=" text-md mb-4 flex space-x-3 {{ Request::routeIs('products.index') ? 'text-amber-500' : '' }} "><svg
                             aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" width="20"
                             viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                             <path

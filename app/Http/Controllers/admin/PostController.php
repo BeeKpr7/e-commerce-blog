@@ -50,7 +50,7 @@ class PostController extends Controller
     {
         $post = $this->postService->update($post, $request->validated());
 
-        return redirect('/posts/'.$post->slug)->with('success','Post updated successfully');
+        return redirect('/posts/'.$post->slug);//->with('success','Post updated successfully');
     }
     public function destroy (Post $post)
     {

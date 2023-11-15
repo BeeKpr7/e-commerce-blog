@@ -11,7 +11,7 @@ class PostService
             'image' => $attributes['image']->store('/images/posts/'.$attributes['title'])
         ]));
 
-        dd($post);
+        return $post;
     }
 
     public function update(Post $post, $attributes) : Post

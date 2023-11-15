@@ -1,0 +1,128 @@
+/*-------- FONT FACE ------------*/
+@font-face {
+    font-family: "Bodoni72";
+    src: url("fonts/Bodoni/Bodoni72.ttf") format("ttf");
+   }
+@font-face {
+    font-family: "Bodoni-Italic";
+    src: url("fonts/Bodoni/Bodoni-HBold-Italic.ttf") format("ttf");
+}
+
+/* 
+$$$$$$\  $$\       $$$$$$\  $$$$$$$\   $$$$$$\  $$\       
+$$  __$$\ $$ |     $$  __$$\ $$  __$$\ $$  __$$\ $$ |      
+$$ /  \__|$$ |     $$ /  $$ |$$ |  $$ |$$ /  $$ |$$ |      
+$$ |$$$$\ $$ |     $$ |  $$ |$$$$$$$\ |$$$$$$$$ |$$ |      
+$$ |\_$$ |$$ |     $$ |  $$ |$$  __$$\ $$  __$$ |$$ |      
+$$ |  $$ |$$ |     $$ |  $$ |$$ |  $$ |$$ |  $$ |$$ |      
+\$$$$$$  |$$$$$$$$\ $$$$$$  |$$$$$$$  |$$ |  $$ |$$$$$$$$\ 
+ \______/ \________|\______/ \_______/ \__|  \__|\________|
+*/
+html { 
+    width: 100%;
+    font-size: 62.5%; 
+    margin: 0 !important;
+    padding: 0 !important;
+    /* overflow-x:hidden!important;
+    overflow-y:scroll!important; */
+    
+}
+body{
+    /* overflow-x:hidden!important;
+    overflow-y:scroll!important; */
+    margin: 0 !important;
+    padding: 0 !important;
+    /* overflow: hidden!important; */
+}
+/* ------- ENCONSTRUCTION-----------*/
+
+.enconstruction img {
+    width: 100%;
+    min-height: 100%;
+    height:100vh;
+    position: absolute;
+    z-index: -1;
+}
+.enconstruction h1 {
+    padding-top: 33vh;
+    font-family: 'Bodoni72';
+    font-style: italic;
+    font-size: 7vw;
+    text-align: center;
+    color:#FCFCFC;
+    text-shadow: 0.001em 0.001em 0.1em #17160d;
+}
+.enconstruction h1+img {
+    width: 14vw;
+    top: 5vh;
+    left: 43%;
+    min-height: inherit;
+    height: inherit;
+}
+.enconstruction h2 {
+    text-align: center;
+    font-size: 1.8vw;
+    color: white;
+    font-family: 'Bodoni72';
+    text-shadow: 0.001em 0.001em 0.1em #17160d
+}
+.enconstruction h2+p {
+    text-align: center;
+    font-size: 6vw;
+    font-family: 'Bodoni72';
+    color:#FCFCFC;;
+    margin: 3rem 0 18rem 0;
+    text-shadow: 0.001em 0.001em 0.1em #17160d;
+    position: absolute;
+    top: 52vh;
+    width: 100%;
+    text-transform: uppercase;
+}
+.enconstruction p+p {
+    font-size: 1vw;
+    font-family: 'Bodoni72';
+    color: white;
+    bottom: 1vh;
+    position: absolute;
+    right: 2vh;
+}
+
+@media screen and (max-width: 769px){
+
+    .enconstruction h1+img {
+        width: 33vw;
+        left: 34vw;
+        top: 7vh;
+    }
+    .enconstruction h1 {
+        font-size: 10vw;
+    }
+    .enconstruction h2 {
+        font-size: 2.8vw;
+    }
+    .enconstruction img {
+        height: auto;
+    }
+}
+@media screen and (max-width:668px){
+
+    .enconstruction h1 + img {
+        width: 15vw;
+        left: 41vw;
+    }
+}
+@media screen and (max-width:568px){
+
+    .enconstruction h1 + img {
+        width: 18vw;
+        left: 42vw;
+    }
+}
+
+@media screen and (max-width:414px){
+
+    .enconstruction h1 + img {
+        width: 37vw;
+        left: 32vw;
+    }
+}

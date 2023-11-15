@@ -12,6 +12,7 @@ return [
         'published' => 'Publié',
         'read-more' => 'Lire la suite',
         'back-blog' => 'Retour aux articles',
+        'all'      => 'Tous les articles',
     ],
 
     'comment' => [

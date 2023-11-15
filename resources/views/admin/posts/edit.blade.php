@@ -14,7 +14,7 @@
                     <x-form.input name="image" type="file" :value="old('image', $post->image)" />
                 </div>
                 <img src="{{ asset('storage/' . $post->image) }}" alt="{{ $post->title }}"
-                    class="w-32 h-32 rounded m-4">
+                    class="w-32 h-32 m-4 rounded">
             </div>
             <x-form.field name="category">
                 <select name="category_id" id="category_id"

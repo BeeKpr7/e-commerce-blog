@@ -48,6 +48,11 @@ class RegisteredUserController extends Controller
 
         Auth::login($user);
 
+        dd(Auth::user()->can('admin'));
+        if (Auth::user()->can('admin')) {
+            return redirect()->route('posts.index');
+        }
+
         return redirect(RouteServiceProvider::HOME);
     }
 }
