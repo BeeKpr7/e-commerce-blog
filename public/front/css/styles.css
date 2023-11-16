@@ -813,10 +813,11 @@ footer p a {
     margin: 5rem auto;
     width: 80%;
     padding: 2rem 0;
-    background-color: rgba(242, 226, 205, 0.662);
-    border-radius: 2rem;
+    background-color: rgba(238, 188, 117, 0.2);
     text-align: center;
     position: relative;
+    border-bottom-left-radius: 2rem;
+    border-top-right-radius: 2rem;
 
     & a {
         text-decoration: none;
@@ -861,6 +862,7 @@ footer p a {
             padding: 0 4rem;
             font-family: "Montserrat";
             font-size: 1.5rem;
+            position: relative;
         }
     }
 
@@ -908,6 +910,18 @@ footer p a {
             & h5:hover {
                 color: white;
             }
+        }
+    }
+    & .category {
+        display: flex;
+        justify-content: center;
+        gap: 2rem;
+        position: absolute;
+        bottom: 1rem;
+        left: 4rem;
+
+        & a {
+            position: initial;
         }
     }
 }

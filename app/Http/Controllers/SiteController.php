@@ -7,6 +7,7 @@ use App\Comment;
 use App\Models\Post;
 use App\Mail\CommentMail;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Mail;
 
 class SiteController extends Controller
@@ -43,8 +44,8 @@ class SiteController extends Controller
     public function laruche(){
 
         return view('public.la-ruche', [
-            'posts' => 
-                Post::latest()->filter(request(['search','category','author']))
+
+            'posts' =>   Post::latest()->filter(request(['search','category','author']))
                 ->paginate(6)->withQueryString()
         ]);
     }

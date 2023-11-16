@@ -30,11 +30,11 @@
             </figure>
             <div class="body">
                 {!! $post->body !!}
-            </div>
-            <div class="category">
-                @foreach ($post->categories as $category)
-                    <a href="{{ route('laruche') }}/?category={{ $category->slug }}">{{ $category->name }}</a>
-                @endforeach
+                <div class="category">
+                    @foreach ($post->categories as $category)
+                        <a href="{{ route('laruche') }}/?category={{ $category->slug }}">{{ $category->name }}</a>
+                    @endforeach
+                </div>
             </div>
         </div>
         {{-- <div class="">

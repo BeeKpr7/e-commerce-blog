@@ -40,6 +40,7 @@ class Post extends Model
         $query->when($filters['category']??false,fn ($query, $category) =>
                 $query->whereHas('categories',fn ($query) =>
                 $query->where('slug',$category)));
+         //dd($query->toSql());
                       
         $query->when($filters['author']??false,fn ($query, $author) =>
                 $query->whereHas('author',fn ($query) =>

@@ -39,6 +39,12 @@
     transition: color 0.2s ease, background-color 0.2s ease,
         border-color 0.2s ease;
 }
+div.lcc-modal__section,
+div.lcc-modal__actions {
+    & button.lcc-button {
+        background-color: black;
+    }
+}
 .lcc-button:focus,
 .lcc-button:hover {
     background: #777;

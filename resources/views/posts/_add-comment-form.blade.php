@@ -26,8 +26,8 @@
     </form>
 @else
     <p class="">
-        <a href="/login" class="text-blue-500 hover:underline">{{ __('Log in') }}</a> {{ __('or') }}
-        <a href="/register" class="text-blue-500 hover:underline">{{ __('Register') }}</a>
+        <a href="/login" class="text-amber-500 hover:underline">{{ __('Log in') }}</a> {{ __('or') }}
+        <a href="/register" class="text-amber-500 hover:underline">{{ __('Register') }}</a>
         {{ __('post.comment.to-leave') }}.
     </p>
 @endauth
