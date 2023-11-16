@@ -29,6 +29,11 @@ class AuthenticatedSessionController extends Controller
 
         $request->session()->regenerate();
 
+        if (Auth::user()->can('admin')) {
+            return redirect()->route('posts.index');
+            // return redirect()->back();
+        }
+
         return redirect()->intended(RouteServiceProvider::HOME);
     }
 

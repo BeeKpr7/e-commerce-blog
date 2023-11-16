@@ -1,0 +1,1638 @@
+@font-face {
+    font-family: "PlayfairDisplay";
+    font-display: auto;
+    src: url("../fonts/Playfair_Display/static/PlayfairDisplay-Regular.ttf")
+        format("truetype");
+}
+@font-face {
+    font-family: "PlayfairDisplayItalic";
+    font-display: auto;
+    src: url("../fonts/Playfair_Display/static/PlayfairDisplay-Italic.ttf")
+        format("truetype");
+}
+@font-face {
+    font-family: "PlayfairDisplayBold";
+    font-display: auto;
+    src: url("../fonts/Playfair_Display/static/PlayfairDisplay-Bold.ttf")
+        format("truetype");
+}
+@font-face {
+    font-family: "Montserrat";
+    font-display: auto;
+    src: url("../fonts/Montserrat/Montserrat-Medium.ttf") format("truetype");
+}
+@font-face {
+    font-family: "MontserratSemiBold";
+    font-display: auto;
+    src: url("../fonts/Montserrat/Montserrat-SemiBold.ttf") format("truetype");
+}
+/* 
+$$$$$$\  $$\       $$$$$$\  $$$$$$$\   $$$$$$\  $$\       
+$$  __$$\ $$ |     $$  __$$\ $$  __$$\ $$  __$$\ $$ |      
+$$ /  \__|$$ |     $$ /  $$ |$$ |  $$ |$$ /  $$ |$$ |      
+$$ |$$$$\ $$ |     $$ |  $$ |$$$$$$$\ |$$$$$$$$ |$$ |      
+$$ |\_$$ |$$ |     $$ |  $$ |$$  __$$\ $$  __$$ |$$ |      
+$$ |  $$ |$$ |     $$ |  $$ |$$ |  $$ |$$ |  $$ |$$ |      
+\$$$$$$  |$$$$$$$$\ $$$$$$  |$$$$$$$  |$$ |  $$ |$$$$$$$$\ 
+ \______/ \________|\______/ \_______/ \__|  \__|\________|
+*/
+html {
+    width: 100%;
+    font-size: 62.5%;
+    margin: 0 !important;
+    padding: 0 !important;
+    /* overflow-x:hidden!important;
+    overflow-y:scroll!important; */
+}
+body {
+    /* overflow-x:hidden!important;
+    overflow-y:scroll!important; */
+    margin: 0 !important;
+    padding: 0 !important;
+    /* overflow: hidden!important; */
+}
+h3 {
+    font-size: 1.5rem !important;
+    font-family: "PlayfairDisplayItalic" !important;
+    margin: 0 0 3px 0 !important;
+}
+h3 + hr {
+    display: block;
+    width: 100px;
+    height: 1px;
+    background-color: #b58a4b;
+    border-radius: 5em;
+    position: absolute;
+}
+h6 + hr {
+    display: block;
+    width: 150px;
+    height: 1px;
+    background-color: #b58a4b;
+    border-radius: 5em;
+    margin-bottom: 5rem;
+}
+h6 {
+    font-size: 3rem !important;
+    font-family: "PlayfairDisplayItalic";
+    margin: 2rem !important;
+}
+h6 span {
+    font-family: "PlayfairDisplayBold";
+}
+h2 {
+    font-size: 2.3rem !important;
+    font-family: "PlayfairDisplayItalic";
+    margin: 25px 0 37px 0 !important;
+}
+h2 span {
+    font-family: "PlayfairDisplayBold";
+}
+.hidden {
+    display: none;
+}
+body img {
+    display: inline;
+}
+footer.contact-footer {
+    margin: 0;
+    padding-top: 15rem;
+}
+/*-----------------------------------------------------------HEADER----------------------------------------*/
+header nav {
+    margin: 3em 3% 7px 16%;
+}
+header nav h1 {
+    font-family: "PlayfairDisplay";
+    font-size: 3em;
+    font-weight: bold;
+    display: inline-block;
+}
+header nav h1 span {
+    font-weight: normal;
+}
+header nav h1 span + span {
+    color: #b58a4b;
+}
+header nav img {
+    width: 4em;
+}
+header nav a {
+    color: black;
+    transition: 0.2s;
+}
+header nav a:hover {
+    color: black;
+}
+.hamburger,
+.cross {
+    border: none;
+    float: right;
+    background-color: transparent;
+}
+.hamburger:hover {
+    transform: scale(1.09);
+}
+.menuBurger {
+    position: absolute;
+    right: 0;
+    z-index: 1;
+    background-color: rgba(65, 72, 79, 0.85);
+    text-align: center;
+}
+.menuBurger a {
+    padding: 3rem 15px;
+    text-decoration: none;
+    list-style-type: none;
+    color: white;
+    font-size: 17px;
+    font-family: "PlayfairDisplayItalic";
+    transition: 0.3s;
+    display: block;
+}
+.menuBurger a:hover {
+    text-decoration: underline;
+    color: #b58a4b;
+}
+.menuBurger form button {
+    padding: 0.35em 1.2em;
+    border: 0.1em solid rgba(182, 148, 98, 0.9);
+    margin: 1em 0.3em 0.3em 0;
+    border-radius: 0.12em;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 300;
+    color: rgb(0, 0, 0);
+}
+.cross {
+    font-size: 3em;
+}
+/*------------------------------------------------------------COOKIE CONSENT -------------------------------------------------*/
+.js-cookie-consent {
+    background-color: #000000b0;
+    width: 100%;
+    color: #b58a4b;
+    font-size: 18px;
+    font-family: "Montserrat", sans-serif;
+    text-align: center;
+    position: fixed;
+    z-index: 99999;
+    padding: 0.5em;
+    bottom: 0;
+}
+.js-cookie-consent .cookie-consent__message {
+    margin-right: 2em;
+}
+.js-cookie-consent button {
+    color: #b58a4b;
+    padding: 0.7rem 2rem;
+    border: 0.2rem solid #b58a4b;
+    margin-left: 2em;
+}
+/*--------------------------------FOOTER--------------------------------*/
+
+.contacter {
+    background-image: url("../images/footer/ensavoirplus.png");
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-position: center;
+    margin: 0rem 15%;
+    padding: 105px 84px;
+    position: relative;
+    z-index: 1;
+    min-height: 41rem;
+}
+.contacter p {
+    font-family: "Montserrat";
+    font-size: 12px;
+    margin: 30px 0;
+    width: 50%;
+}
+.contacter a {
+    color: #b58a4b;
+    font-family: "PlayfairDisplayItalic";
+    padding: 15px 60px;
+    background-color: rgba(251, 250, 248, 0.6);
+    font-size: 15px;
+    border: solid 1px;
+    border-color: #b58a4b;
+    transition: 0.3s;
+    text-decoration: none;
+    position: absolute;
+    right: 11rem;
+    top: 17rem;
+}
+.contacter a:hover {
+    transform: scale(1.09);
+    text-decoration: none;
+    color: #b58a4b;
+    background-color: #313131;
+}
+footer {
+    background-color: #313131;
+    margin: -26rem 0 0 0;
+    padding: 23rem 0 0 0;
+    text-align: center;
+    position: relative;
+}
+footer img {
+    width: 10%;
+    transition: 0.3s;
+    display: initial;
+}
+footer img:hover {
+    transform: scale(1.07);
+}
+footer nav + img {
+    position: absolute;
+    top: 9rem;
+    left: 0;
+    opacity: 0.4;
+}
+footer ul + img {
+    position: absolute;
+    top: 9rem;
+    right: 0;
+    opacity: 0.3;
+}
+
+footer nav a {
+    display: inline-flex;
+    align-content: space-between;
+    padding: 2rem;
+    text-decoration: none;
+    list-style-type: none;
+    color: white;
+    font-size: 17px;
+    font-family: "PlayfairDisplayItalic";
+    transition: 0.3s;
+}
+footer nav a:hover {
+    text-decoration: none !important;
+    color: #b58a4b !important;
+}
+footer ul li {
+    display: initial;
+    padding: 2rem;
+    text-decoration: none;
+    list-style-type: none;
+    color: white;
+    font-size: 12px;
+    margin: 0 10px;
+    opacity: 0.8;
+}
+footer ul li a {
+    text-decoration: none !important;
+    color: white;
+    opacity: 0.8;
+}
+footer ul li img {
+    width: 10px;
+    margin: 5px;
+}
+footer hr + p {
+    color: white;
+    font-size: 10px;
+    padding: 2rem;
+}
+footer p a {
+    text-decoration: none !important;
+    color: white;
+}
+/*   ---------------------------------------------- FIRSTVIEW -------------------------------------------*/
+.firstview {
+    align-content: flex-end;
+    display: inline-flex;
+}
+.firstview aside img {
+    width: 14em;
+    margin: 2em auto;
+}
+.firstview aside {
+    width: 10%;
+    text-align: center;
+    margin: -7em 5em 0 5em;
+    display: inline-block;
+}
+.firstview hr {
+    display: block;
+    width: 2px;
+    height: 80px;
+    background-color: #b58a4b;
+    border-radius: 5em;
+    margin: auto;
+}
+.firstview aside hr + p {
+    text-decoration: none;
+    color: black;
+    display: block;
+    /* writing-mode: sideways-lr; */
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+    margin: 1em auto 0 auto;
+    width: 52px;
+    font-family: "PlayfairDisplay";
+    font-size: 3em;
+    transition: 0.2s;
+}
+.firstview aside a:hover {
+    color: #b58a4b;
+}
+.firstview article {
+    display: inline-block;
+    position: relative;
+    width: 90%;
+}
+.firstview article img,
+.firstview aside + img {
+    width: 100%;
+    height: 100%;
+}
+.firstview article a {
+    position: absolute;
+    bottom: 0;
+    text-decoration: none;
+    font-family: "PlayfairDisplay";
+    font-size: 18px;
+}
+.firstview article img + a {
+    right: 226px;
+    padding: 87px 63px 28px 68px;
+    background-image: url("../images/home/miel.png");
+    background-repeat: no-repeat;
+    background-size: 20%;
+    background-position: 91px 21px;
+    background-color: rgba(182, 148, 98, 0.8);
+    color: black;
+    transition: 0.2s;
+}
+.firstview article img + a:hover,
+.firstview article a + a:hover {
+    transform: scale(0.9);
+}
+.firstview article a + a {
+    right: 0em;
+    padding: 29px 48px;
+    background-color: rgba(65, 72, 79, 0.85);
+    opacity: 0.7;
+    color: white;
+    transition: 0.2s;
+}
+/*------------------------------------------------------------------MIELLERIE-------------------------------------------------*/
+.description-miel {
+    display: none;
+}
+.miellerie {
+    background-image: url("../images/home/alveole-bkgrd.png");
+    background-repeat: no-repeat;
+    background-size: 13%;
+    background-position: -22px 114px;
+    margin: 13em 0;
+    display: flex;
+}
+.miellerie article {
+    position: relative;
+    width: 55%;
+    padding: 46px 6% 0 15%;
+}
+.miellerie article + img {
+    width: 45%;
+}
+.miellerie p {
+    font-family: "Montserrat";
+    font-size: 15px;
+    margin: 30px 0;
+}
+.miellerie p span {
+    font-family: "MontserratSemiBold";
+    color: #b58a4b;
+}
+.miellerie article p + a {
+    float: right;
+    color: black;
+    font-family: "PlayfairDisplayItalic";
+    font-size: 15px;
+    margin: 0 17% 0 0;
+    text-decoration: none;
+    transition: 0.3s;
+}
+.miellerie article p + a:hover {
+    color: #b58a4b;
+}
+.miellerie article a + hr {
+    display: block;
+    width: 17%;
+    height: 1px;
+    background-color: #b58a4b;
+    border-radius: 2em;
+    position: absolute;
+    right: 0;
+}
+/*----------------------------------------------FRANCAIS----------------------*/
+.francais {
+    padding: 7rem 25% 21rem;
+    text-align: center;
+    background-image: url("../images/home/100francais.png");
+    background-size: cover;
+    color: white !important;
+}
+.francais article img {
+    margin: 10px 0;
+}
+
+.francais article p {
+    font-size: 15px;
+    font-family: "Montserrat";
+    margin: 37px 0;
+}
+.francais article p span {
+    font-family: "MontserratSemiBold";
+    font-size: 16px;
+}
+
+.francais article a {
+    color: #b58a4b;
+    font-family: "PlayfairDisplayItalic";
+    padding: 15px 60px;
+    background-color: rgba(17, 15, 13, 0.6);
+    font-size: 15px;
+    border: solid 1px;
+    border-color: #b58a4b;
+    transition: 0.3s;
+    text-decoration: none;
+}
+.francais article a:hover {
+    background-color: white;
+}
+/*-------------------------------------------------------MARCHER------------------------*/
+.marcher {
+    display: flex;
+}
+.marcher article {
+    margin: -4rem 0 0 -14rem;
+}
+.marcher :first-child img {
+    width: 32%;
+    margin: 0 4px;
+    display: inline;
+}
+.marcher article + article {
+    margin: 7rem 3rem 0 -13rem;
+    width: 64%;
+    padding: 20px 103px 15px 39px;
+    height: 90%;
+    background-color: white;
+}
+.marcher p {
+    font-family: "Montserrat";
+    font-size: 13px;
+    margin: 30px 0;
+}
+.marcher p span {
+    font-family: "MontserratSemiBold";
+    color: #b58a4b;
+}
+.marcher article p + a {
+    float: right;
+    color: black;
+    font-family: "PlayfairDisplayItalic";
+    font-size: 15px;
+    margin: 0 35px 0 0;
+    text-decoration: none;
+    transition: 0.3s;
+}
+.marcher article p + a:hover {
+    color: #b58a4b;
+}
+.marcher article a + hr {
+    display: block;
+    width: 100px;
+    height: 1px;
+    background-color: #b58a4b;
+    border-radius: 2em;
+    position: absolute;
+    right: 3rem;
+}
+/*----------------------------------------MIELLERIE / PRODUITS----------*/
+.firstviewAjust aside hr {
+    height: 140px;
+}
+.firstviewAjust aside hr + a {
+    width: 66px;
+    font-size: 3.5rem;
+}
+.firstviewAjust article {
+    position: relative;
+}
+.firstviewAjust article img {
+    height: 90%;
+}
+.firstviewAjust article p {
+    position: absolute;
+    bottom: 9rem;
+    right: 4rem;
+    font-family: "PlayfairDisplay";
+    font-size: 5rem;
+    color: white;
+    text-shadow: #060606 1px 0 10px;
+}
+.firstviewAjust article p + hr {
+    position: absolute;
+    display: block;
+    height: 2px;
+    width: 30%;
+    bottom: 8rem;
+    right: 0;
+    background-color: white;
+}
+/*------------------------- DESCRIPTION MIELLERIE -------------------------------*/
+.description {
+    background-image: url("../images/miellerie/bckgrnd-miellerie.png");
+    background-repeat: no-repeat;
+    background-position: 100% 0rem;
+    background-size: 30%;
+    margin: -4rem 0 0 0;
+    display: flex;
+    padding: 9rem 16% 20rem 16%;
+}
+.description article {
+    width: 40%;
+    padding: 7rem 0 0 0;
+}
+.description article p {
+    font-family: "Montserrat";
+    font-size: 13px;
+}
+.description article h2 + p {
+    font-family: "MontserratSemiBold";
+}
+.description p span {
+    font-family: "MontserratSemiBold";
+    color: #b58a4b;
+}
+.description article + img {
+    width: 55%;
+    margin: 0px 0 0 4%;
+}
+/*--------------------------------PRODUITS ------------------------------*/
+.produits {
+    background-image: url("../images/home/alveole-bkgrd.png");
+    background-repeat: no-repeat;
+    background-position: -5rem;
+    background-size: 19%;
+    text-align: center;
+    padding: 5rem 10% 0 10%;
+    background-color: #f4f4f4;
+}
+.produits h3 + hr {
+    left: 47.4%;
+}
+.produits h2 + p,
+.produits p + p {
+    width: 72%;
+    font-size: 1.8rem;
+    margin: 0 auto;
+}
+
+.miel article {
+    width: 22%;
+    margin: 5rem 5%;
+    display: inline-block;
+    vertical-align: top;
+}
+.miel article:hover img {
+    transform: scale(1.09);
+}
+
+.miel article div img {
+    width: 3rem;
+    margin: 1rem;
+}
+.miel article img {
+    border-radius: 5%;
+    width: 65%;
+    transition: 0.2s;
+    display: initial;
+}
+.miel article h2 {
+    font-family: "PlayfairDisplayBold" !important;
+    font-size: 25px !important;
+    margin: 13px 0 !important;
+}
+.miel article p {
+    font-family: "Montserrat";
+    font-size: 16px;
+}
+
+.miel article button {
+    padding: 0.35em 1.2em;
+    border: 0.1em solid rgba(182, 148, 98, 0.9);
+    margin: 1em 0.3em 0.3em 0;
+    border-radius: 0.12em;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 300;
+    color: rgb(0, 0, 0);
+    text-align: center;
+    transition: all 0.2s;
+    font-size: 14px;
+}
+.miel article button:hover {
+    color: #ffffff;
+    background-color: black;
+}
+
+.description-miel {
+    position: fixed;
+    width: 60%;
+    right: 20%;
+    top: 18%;
+    padding: 3rem 3rem 5rem;
+    background-color: #ddd9cd;
+    border-bottom: 3px solid #b58b4b9d;
+    border-radius: 4.5px;
+    -webkit-box-shadow: 9px 9px 31px 0px rgba(163, 159, 151, 0.9);
+    -moz-box-shadow: 9px 9px 31px 0px rgba(163, 159, 151, 0.9);
+    box-shadow: 9px 9px 31px 0px rgba(163, 159, 151, 0.9);
+    background-image: url("../images/home/alveole-bkgrd.png");
+    background-repeat: no-repeat;
+    background-position: 0rem 19rem;
+    background-size: 11%;
+    z-index: 2;
+    text-align: center;
+}
+.cross-desc {
+    float: right;
+    border: none;
+    background: transparent;
+    font-size: 3rem;
+}
+.description-miel hr + p,
+.description-miel p + p,
+.description-miel p {
+    font-family: "Montserrat";
+    font-size: 2.2rem;
+    margin: 1rem;
+    text-align: left;
+    width: 80%;
+    margin: 0 auto;
+}
+.description-miel img {
+    float: right;
+    width: 31%;
+    border-radius: 1rem;
+    margin: 0 3rem;
+}
+/*-------------------------------LA RUCHE----------------------------------*/
+.la-ruche {
+    display: flex;
+    margin: 5rem auto;
+    flex-wrap: wrap;
+    justify-content: center;
+    position: relative;
+
+    & nav {
+        position: absolute;
+        bottom: -20px;
+
+        & span,
+        a {
+            font-family: "PlayfairDisplayItalic";
+            font-size: 1.5rem;
+            margin: 0 1rem;
+            color: #b58a4b;
+        }
+    }
+
+    & p {
+        font-size: 17px;
+    }
+    & p + a {
+        font-family: "PlayfairDisplayItalic";
+        color: #b58a4b;
+        text-decoration: none;
+        transition: 0.3s;
+        font-size: 17px;
+        margin: 0 5px;
+    }
+
+    & article {
+        width: 25%;
+        min-width: 30rem;
+        text-align: center;
+        background-color: rgba(242, 226, 205, 0.662);
+        display: flex;
+        flex-direction: column;
+        margin: 2rem 1%;
+        border-top-right-radius: 2rem;
+        border-bottom-left-radius: 2rem;
+        padding-bottom: 1rem;
+
+        & h1 {
+            font-family: "PlayfairDisplayBold";
+            font-size: 2.5rem;
+            margin: 1rem 0;
+            padding: 0 1rem;
+        }
+
+        & img {
+            border-top-right-radius: 2rem;
+        }
+        & div {
+            flex-grow: 1;
+        }
+        & p {
+            font-family: "Montserrat";
+            font-size: 1.5rem;
+            margin: 1rem 0;
+            padding: 0 1rem;
+        }
+        & a {
+            text-decoration: none;
+            color: black;
+            padding: 4px 2rem;
+            font-family: "PlayfairDisplayItalic";
+            font-size: 15px;
+            background-color: rgba(182, 148, 98, 0.8);
+            border-radius: 1rem;
+            width: 90%;
+            margin: 0 auto;
+        }
+
+        & a:hover {
+            background-color: #b58a4b;
+            color: white;
+        }
+    }
+}
+
+.search {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    margin: 0 auto;
+
+    & select {
+        flex: 1;
+        padding: 0 1rem;
+        border: none;
+        font-family: "Montserrat";
+        background: none;
+        border-bottom: solid 2px #b58a4b;
+        font-size: 18px;
+    }
+
+    & form {
+        flex: 1;
+        padding: 0 1rem;
+        & input {
+            width: 100%;
+            border: none;
+            border-bottom: solid 2px;
+            border-color: #b58a4b;
+            font-family: "Montserrat";
+            font-size: 1.5rem;
+            margin: 2rem 0;
+            padding: 0 1rem;
+            outline: none;
+        }
+        & input:focus {
+            border-color: #b58a4b;
+            outline: none;
+        }
+    }
+}
+/*-------------------------------ARTICLE DETAILS----------------------------------*/
+.show-article {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 5rem auto;
+    width: 80%;
+    padding: 2rem 0;
+    background-color: rgba(238, 188, 117, 0.2);
+    text-align: center;
+    position: relative;
+    border-bottom-left-radius: 2rem;
+    border-top-right-radius: 2rem;
+
+    & a {
+        text-decoration: none;
+        color: black;
+        padding: 4px 2rem;
+        font-family: "PlayfairDisplayItalic";
+        font-size: 15px;
+        background-color: rgba(182, 148, 98, 0.8);
+        border-radius: 1rem;
+        width: auto;
+        position: absolute;
+        left: 2rem;
+        top: 2rem;
+    }
+
+    & a:hover {
+        background-color: #b58a4b;
+        color: white;
+    }
+
+    & .content {
+        display: flex;
+        justify-content: space-between;
+        align-items: top;
+        text-align: center;
+        width: 80%;
+
+        & figure {
+            width: 30%;
+            margin: 0 auto;
+            padding: 0;
+            & img {
+                width: 100%;
+                border-top-right-radius: 2rem;
+                border-bottom-left-radius: 2rem;
+            }
+        }
+        & .body {
+            text-align: left;
+            width: 70%;
+            margin: 0 auto;
+            padding: 0 4rem;
+            font-family: "Montserrat";
+            font-size: 1.5rem;
+            position: relative;
+        }
+    }
+
+    & h1 {
+        font-family: "PlayfairDisplayBold";
+        font-size: 2.5rem;
+        margin: 1rem 0 6rem;
+        padding: 0 1rem;
+    }
+
+    & .author {
+        font-family: "PlayfairDisplayItalic";
+        font-size: 1.5rem;
+        margin: 1rem 0;
+        padding: 0 1rem;
+        display: flex;
+        align-items: center;
+        justify-content: end;
+        width: 80%;
+
+        & img {
+            width: 5rem;
+            margin: 0 1rem;
+            border-radius: 50%;
+        }
+
+        & a {
+            text-decoration: none;
+            color: black;
+            padding: 4px 2rem;
+            font-family: "PlayfairDisplayItalic";
+            background-color: rgba(182, 148, 98, 0.8);
+            border-radius: 1rem;
+            display: block;
+            width: auto;
+            position: relative;
+            top: inherit;
+
+            & a:hover {
+                background-color: #b58a4b;
+            }
+            & h5 {
+                font-size: 15px;
+            }
+            & h5:hover {
+                color: white;
+            }
+        }
+    }
+    & .category {
+        display: flex;
+        justify-content: center;
+        gap: 2rem;
+        position: absolute;
+        bottom: 1rem;
+        left: 4rem;
+
+        & a {
+            position: initial;
+        }
+    }
+}
+/*-------------------------------COMMENTS SECTION----------------------------------*/
+
+.comment {
+    & p,
+    textarea,
+    button {
+        text-align: left;
+        font-size: 18px;
+    }
+}
+/*-------------------------------SAVIEZVOUS----------------------------------*/
+.saviezvous {
+    background-image: url("../images/miellerie/Le-saviez-vous.png");
+    background-repeat: no-repeat;
+
+    background-size: 11%;
+    padding: 8rem 10% 30rem;
+    display: flex;
+    background-color: #313131;
+    color: white !important;
+    margin-bottom: -25rem;
+}
+.saviezvous img {
+    width: 49%;
+    border: solid 2rem;
+    border-color: transparent;
+    margin: 2rem 0%;
+}
+.saviezvous article {
+    width: 49%;
+    margin: 2rem 2%;
+    padding: 2rem 0%;
+}
+.saviezvous article p {
+    font-family: "Montserrat";
+    font-size: 2rem;
+}
+.saviezvous article p span {
+    font-family: "MontserratSemiBold";
+    font-size: 2.1rem;
+}
+/*----------------------------------CONTACT---------------------------------*/
+
+.contact aside hr {
+    height: 20rem;
+    margin-bottom: 6rem;
+}
+.contact aside hr + a {
+    font-size: 5rem;
+    width: 94px;
+}
+.coordonee {
+    position: relative;
+    margin: -6rem 16%;
+    z-index: 2;
+    padding: 13rem 0;
+}
+.coordonee article ul {
+    padding: 0;
+    text-decoration: none;
+    list-style-type: none;
+    color: black;
+    font-size: 12px;
+    margin: 0 0px;
+    font-family: "Montserrat";
+}
+.coordonee article ul li {
+    margin: 1rem 0;
+}
+.coordonee article ul li img {
+    margin: 1rem;
+}
+.coordonee article ul li a {
+    color: black;
+    text-decoration: none;
+    transition: 0.3s;
+}
+.coordonee article ul li a:hover {
+    color: #b58a4b;
+    font-size: 14px;
+    text-decoration: none;
+}
+.coordonee article + article {
+    margin: 3rem 0 0;
+}
+.coordonee form,
+.contactForm {
+    position: absolute;
+    top: 0;
+    right: 0rem;
+    width: 45rem;
+    border-top: solid 5px;
+    border-color: #b58a4b;
+    background-color: #ddd9cd;
+    padding: 3rem;
+    z-index: 2;
+}
+.contactForm {
+    top: 23rem;
+}
+#errorsAjax {
+    color: rgba(245, 59, 59, 0.794);
+    font-size: 11px;
+}
+.coordonee form h4,
+.contactForm h4 {
+    font-family: "PlayfairDisplayBold";
+    font-size: 20px;
+    margin: 0 0 2rem 0;
+}
+.coordonee form p,
+.contactForm p {
+    font-family: "Montserrat";
+    font-size: 14px;
+    color: grey;
+    margin: 0 0 2.5rem 0;
+}
+
+.coordonee form div {
+    width: 45%;
+    position: relative;
+    display: inline-block;
+    margin: 3rem 5px;
+}
+.coordonee form label {
+    position: absolute;
+    top: -3rem;
+    left: 2rem;
+    font-family: "MontserratSemiBold";
+    color: grey;
+    text-transform: uppercase;
+    font-size: 12px;
+}
+.coordonee form input {
+    border: none;
+    width: 100%;
+    height: 4rem;
+    box-shadow: 2px 2px 2px 1px rgba(27, 27, 26, 0.282);
+    font-size: 15px;
+}
+.coordonee > form:nth-child(3) > div:nth-child(10) {
+    width: 100%;
+}
+#message {
+    height: 19rem;
+    width: 93%;
+    border: none;
+    box-shadow: 2px 2px 2px 1px rgba(27, 27, 26, 0.282);
+    font-size: 15px;
+}
+#submit {
+    margin: 0 auto;
+    padding: 1rem 5rem;
+    box-shadow: 2px 2px 2px 1px rgba(27, 27, 26, 0.282);
+    font-family: "MontserratSemiBold";
+    background-color: #b58b4b8a;
+    color: grey;
+    font-size: 15px;
+    cursor: pointer;
+    transition: 0.1;
+}
+
+#submit:hover {
+    color: #b58a4b;
+    background-color: #313131;
+}
+#submit:active {
+    font-size: 13px;
+}
+/*-----------------------------------NOTRE HISTOIRE-----------------------------*/
+.notreHistoire aside hr {
+    height: 17rem;
+}
+.notreHistoire article {
+    position: relative;
+}
+.notreHistoire article img {
+    height: 90%;
+}
+.notreHistoire article p {
+    position: absolute;
+    bottom: 9rem;
+    right: 5rem;
+    font-family: "PlayfairDisplay";
+    font-size: 5rem;
+    color: white;
+    text-shadow: #060606 1px 0 10px;
+}
+.notreHistoire article p + hr {
+    position: absolute;
+    display: block;
+    height: 2px;
+    width: 41%;
+    bottom: 9rem;
+    right: 0;
+    background-color: white;
+}
+/*----------------------------- APICULTEUR -----------------------------------*/
+.apiculteur {
+    margin: 5rem 2%;
+    vertical-align: top;
+    display: inline-flex;
+}
+.apiculteur article {
+    display: inline-block;
+    width: 40%;
+    margin: 12rem auto 0;
+}
+.apiculteur article h2 + p {
+    font-family: "MontserratSemiBold";
+    font-size: 1.5em;
+}
+.apiculteur article p + p {
+    font-family: "Montserrat";
+    font-size: 1.3em;
+}
+.apiculteur article p + h4 {
+    background-image: url("../images/notrehistoire/apostrophe.png");
+    background-repeat: no-repeat;
+    background-position: 1rem 2rem;
+    background-size: 16%;
+    font-family: "PlayfairDisplayItalic";
+    font-size: 4.5em;
+    font-weight: bold;
+    padding: 4rem;
+    margin-top: 7rem;
+}
+.apiculteur article + article {
+    position: relative;
+    background-color: #b58b4b63;
+    content: " ";
+    width: 50%;
+    height: 40rem;
+    margin: 0;
+    padding: 0;
+}
+.apiculteur img {
+    display: inline-block;
+    width: 42%;
+    margin: 0 auto;
+    max-height: 86rem;
+}
+/*-----------------------------------TIMELINE --------------------------------------*/
+.timeline {
+    padding: 0rem 10% 4rem 10%;
+    background-image: url("../images/notrehistoire/bckgrnd-timeline.png");
+    background-repeat: no-repeat;
+    background-size: 42%;
+    text-align: center;
+    background-position: 0 20rem;
+}
+.timeline article {
+    margin: 11rem auto;
+    position: relative;
+}
+.timeline h5 {
+    font-family: "PlayfairDisplay";
+    color: grey;
+    opacity: 0.3;
+    font-size: 23em;
+}
+.timeline article div {
+    width: 49%;
+    display: inline-block;
+}
+.timeline > article:nth-child(2) > div:nth-child(1),
+.timeline > article:nth-child(4) > div:nth-child(1) {
+    float: right;
+}
+.timeline > article:nth-child(3) > div:nth-child(1) {
+    float: left;
+}
+.timeline > article:nth-child(3) > div:nth-child(2) {
+    margin-top: 8rem;
+}
+.timeline article div {
+    position: relative;
+}
+.timeline article div hr {
+    position: absolute;
+    width: 8rem;
+    height: 2px;
+    background-color: #b58b4ba9;
+}
+.timeline article:nth-child(2n) div hr {
+    left: 1%;
+    top: 14rem;
+}
+.timeline article:nth-child(2n + 1) div hr {
+    right: 1%;
+    top: 14rem;
+}
+.timeline h2 {
+    color: #b58a4b;
+    font-weight: bold;
+}
+.timeline h2 + p {
+    font-family: "Montserrat";
+    font-size: 1.5em;
+}
+/*-------------------------------------------Mentions LEGALS--------------------*/
+.mentions {
+    margin: 5rem 15%;
+}
+.mentions p {
+    font-family: "Montserrat";
+    font-size: 15px;
+}
+.mentions h1 {
+    text-align: center;
+    font-size: 25px;
+    font-family: "MontserratSemiBold";
+}
+.mentions article h2 {
+    font-family: "Montserrat" !important;
+    font-size: 20px;
+    font-weight: bold;
+}
+/*---------------------------- MEDIA QUERIES --------------------------------------------------------*/
+@media screen and (max-width: 1300px) {
+    /*--------------------------------------- HOME-----------------------------*/
+    .firstview {
+        display: inline-flex;
+    }
+    .firstview aside {
+        margin-top: 0;
+    }
+    .firstview aside img {
+        width: 100%;
+    }
+    .miel article div {
+        margin: 0;
+        right: 16px;
+    }
+    .miel article {
+        width: 30%;
+        margin: 2rem 1%;
+    }
+    .miel article img {
+        width: 70%;
+    }
+
+    .saviezvous {
+        display: inline-block;
+        background-size: 21%;
+        padding: 2rem 3% 34rem;
+    }
+    .saviezvous img {
+        border: none;
+        width: 41%;
+        margin: 4rem 0;
+        vertical-align: top;
+    }
+    .saviezvous article {
+        display: inline-block;
+    }
+    .contacter {
+        min-height: inherit;
+        margin: 0 6%;
+        padding: 0px 10%;
+        background-size: cover;
+    }
+    .contacter h3 {
+        padding: 15px 0;
+    }
+    .contacter h2 {
+        margin: 16px 0 0 !important;
+        font-size: 18px !important;
+    }
+    .contacter p {
+        padding: 15px 0;
+        margin: 0;
+    }
+    .contacter a {
+        right: 9rem;
+        top: 6rem;
+    }
+    footer {
+        margin: -11rem 0 0 0;
+        padding: 20rem 0 0 0;
+    }
+
+    .contact aside hr {
+        height: 80px;
+    }
+    .coordonee {
+        margin: -6rem 8% -6rem 16%;
+    }
+    .coordonee form,
+    .contactForm {
+        width: 47%;
+    }
+    .description-miel {
+        width: 80%;
+        right: 10%;
+    }
+    .description-miel hr + p,
+    .description-miel p + p,
+    .description-miel p {
+        text-align: left;
+    }
+}
+@media screen and (max-width: 970px) {
+    .coordonee form,
+    .contactForm {
+        position: initial;
+        width: 64%;
+        margin: 0 auto;
+    }
+    .coordonee article {
+        display: inline-block;
+        width: 49%;
+        padding: 5rem 0;
+    }
+    .coordonee {
+        padding: 0;
+    }
+    .show-article .content {
+        flex-direction: column;
+    }
+}
+@media screen and (max-width: 940px) {
+    .contacter {
+        margin: 10rem 5% 0;
+        padding: 4rem 7%;
+        position: relative;
+        z-index: 3;
+        background-image: inherit;
+        background-color: white;
+        text-align: center;
+        min-height: inherit;
+    }
+    .contacter p {
+        width: inherit;
+    }
+    .contacter a {
+        position: initial;
+    }
+    .saviezvous {
+        padding: 2rem 3%;
+    }
+    .contacter h3 + hr {
+        margin: 1rem auto;
+        position: inherit;
+    }
+    footer {
+        margin: 2rem 0 0 0;
+        padding: 5rem 0 0 0;
+    }
+}
+@media screen and (max-width: 800px) {
+    h6 {
+        font-size: 2rem !important;
+    }
+
+    /*------------------------------------------- HOME ----------------------------------- */
+    .firstview article img,
+    .firstview article + img {
+        height: auto;
+    }
+    .firstview aside {
+        display: none;
+    }
+    header nav {
+        margin-left: 1rem;
+    }
+    .firstview article {
+        width: 100%;
+    }
+    .firstview article a {
+        font-size: 10px;
+    }
+    .firstview article a + a {
+        padding: 1rem 5%;
+    }
+    .firstview article img + a {
+        left: 0;
+        right: inherit;
+        background-size: 15%;
+        padding: 3rem 5% 1rem;
+        background-position: 50% 1.5rem;
+    }
+
+    .miellerie {
+        margin: 4em 0;
+        display: inherit;
+        background-size: 37%;
+        background-position: 0% 0%;
+    }
+    .miellerie article {
+        width: 80%;
+        margin: 0 auto;
+        padding: 0;
+        text-align: center;
+    }
+    .miellerie article + img {
+        width: 71%;
+        margin: 8rem auto;
+        display: block;
+    }
+    .miellerie article + a {
+        padding: 0 20% 0 0;
+    }
+
+    .francais {
+        padding: 7rem 13% 11rem;
+    }
+    .francais article img {
+        width: 100%;
+    }
+
+    .marcher {
+        display: inherit;
+        text-align: center;
+    }
+    .marcher article {
+        margin: 4rem auto;
+        display: block;
+    }
+    .marcher :first-child img {
+        margin: 0 1px;
+    }
+    .marcher article + article {
+        margin: 4rem auto;
+        width: 80%;
+        padding: inherit;
+        height: inherit;
+        background-color: inherit;
+    }
+    h3 + hr {
+        margin: 1rem auto;
+        position: inherit;
+    }
+    .marcher article p + a {
+        margin: 0 20% 0 0;
+    }
+    .marcher article a + hr {
+        width: 10%;
+        right: 10%;
+    }
+
+    footer {
+        margin: 3rem 0 0 0;
+        padding: 3rem 0 0 0;
+    }
+    footer img {
+        width: 18%;
+    }
+    footer nav a {
+        display: block;
+        padding: 0.5rem;
+    }
+    footer ul {
+        padding: 0;
+        margin: 1rem 0;
+    }
+    footer ul li {
+        display: block;
+        padding: 0;
+        margin-top: 1rem;
+    }
+    /*------------------------------------------------ NOTRE HISTOIRE ----------------------------*/
+    .notreHistoire article p + hr {
+        width: 40%;
+        bottom: 3rem;
+        left: 34%;
+    }
+    .notreHistoire article p {
+        font-size: 3em;
+        left: 3%;
+        bottom: 2rem;
+    }
+    .apiculteur {
+        margin: 5rem 11%;
+        display: block;
+        text-align: center;
+    }
+    .apiculteur article {
+        display: block;
+        width: 100%;
+        margin: 0;
+    }
+    .apiculteur article p + h4 {
+        background-size: 41%;
+        margin: 0;
+        padding: 4rem 0 0;
+    }
+    .apiculteur img {
+        width: 100%;
+    }
+    .timeline article {
+        margin: 0;
+    }
+    .timeline article div {
+        width: 100%;
+        display: block;
+        float: inherit;
+    }
+    .timeline h5 {
+        font-size: 13em;
+    }
+    /*------------------------------------------------------------------- MIELLERIE -----------------------------------------------*/
+    .firstviewAjust article p {
+        font-size: 3rem;
+        bottom: 6rem;
+    }
+    .firstviewAjust article p + hr {
+        bottom: 4rem;
+    }
+    .description {
+        background-size: 59%;
+        display: block;
+        padding: 5rem 5%;
+        margin: 0;
+        text-align: center;
+    }
+    .description article {
+        width: 100%;
+        padding: 2rem 2rem;
+    }
+    .miel article div img {
+        width: 2rem;
+        margin: 0rem;
+    }
+    .miel article h2 {
+        font-size: 20px !important;
+    }
+    .miel article p {
+        font-size: 14px;
+    }
+    .saviezvous {
+        text-align: center;
+        padding: 2rem 3%;
+    }
+    .saviezvous img {
+        width: 77%;
+    }
+    .saviezvous article {
+        margin: 2rem auto;
+        width: 77%;
+    }
+    .coordonee {
+        margin: 0rem 8%;
+        text-align: center;
+    }
+    .coordonee article {
+        display: block;
+        width: 100%;
+        padding: 3rem 0;
+    }
+    .coordonee article + article {
+        margin: 0;
+    }
+    .coordonee form,
+    .contactForm {
+        margin: 0 0 -5rem 0;
+        width: 100%;
+        padding: 1rem;
+    }
+}
+@media screen and (max-width: 700px) {
+    .description-miel {
+        top: 5%;
+        padding: 1rem;
+    }
+    .description-miel h6 + hr {
+        margin-bottom: 1rem;
+    }
+    .description-miel img {
+        float: inherit;
+        width: 40%;
+    }
+    .description-miel hr + p,
+    .description-miel p + p,
+    .description-miel p {
+        text-align: center;
+        font-size: 1.8rem;
+    }
+}
+@media screen and (max-width: 500px) {
+    .notreHistoire article p + hr {
+        width: 39%;
+        bottom: 1rem;
+        left: 35%;
+    }
+    .firstviewAjust article p {
+        font-size: 2rem;
+        bottom: 2rem;
+    }
+    .firstviewAjust article p + hr {
+        bottom: 1rem;
+    }
+    .miel article {
+        width: 47%;
+    }
+    .description-miel hr + p,
+    .description-miel p + p,
+    .description-miel p {
+        font-size: 1.3rem;
+        margin-top: 1rem;
+    }
+    .produits {
+        padding: 4rem 0;
+    }
+    .timeline article div {
+        display: contents;
+    }
+    .timeline > article:nth-child(3) > div:nth-child(2) {
+        margin-top: 0;
+    }
+}

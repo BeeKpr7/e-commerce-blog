@@ -1,7 +1,10 @@
-import './bootstrap';
+import "./bootstrap";
+import "../css/app.css";
+import "./choices.js";
 
-import Alpine from 'alpinejs';
+//Alpine is imported via livewire scripts
+// import Alpine from "alpinejs";
 
-window.Alpine = Alpine;
+// window.Alpine = Alpine;
 
-Alpine.start();
+// Alpine.start();

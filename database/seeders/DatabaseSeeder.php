@@ -3,6 +3,11 @@
 namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use App\Models\Post;
+use App\Models\User;
+use App\Models\Adress;
+use App\Models\Comment;
+use App\Models\Product;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -12,11 +17,22 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        // \App\Models\User::factory(10)->create();
+        $user = User::factory()->create([
+            'name' => 'Etienne',
+            'email' => 'etienne@laravel.com',
+        ]);
 
-        // \App\Models\User::factory()->create([
-        //     'name' => 'Test User',
-        //     'email' => 'test@example.com',
-        // ]);
+        Post::factory(5)->create([
+            'user_id' => $user->id
+        ]);
+
+        Comment::factory(10)->create();
+
+        Product::factory(10)->create();
+
+        Adress::factory(5)->create([
+            'user_id' => $user->id
+        ]);
+        Adress::factory(5)->create();
     }
 }

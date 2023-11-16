@@ -32,12 +32,14 @@ class RegisteredUserController extends Controller
     {
         $request->validate([
             'name' => ['required', 'string', 'max:255'],
+            'username' => ['required', 'string', 'max:255', 'unique:'.User::class],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:'.User::class],
             'password' => ['required', 'confirmed', Rules\Password::defaults()],
         ]);
 
         $user = User::create([
             'name' => $request->name,
+            'username' => $request->username,
             'email' => $request->email,
             'password' => Hash::make($request->password),
         ]);
@@ -45,6 +47,11 @@ class RegisteredUserController extends Controller
         event(new Registered($user));
 
         Auth::login($user);
+
+        dd(Auth::user()->can('admin'));
+        if (Auth::user()->can('admin')) {
+            return redirect()->route('posts.index');
+        }
 
         return redirect(RouteServiceProvider::HOME);
     }
