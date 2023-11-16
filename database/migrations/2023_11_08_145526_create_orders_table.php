@@ -18,7 +18,6 @@ return new class extends Migration
             $table->foreignId('user_id')->nullable()->constrained()->default(null);
             $table->foreignId('coupon_id')->nullable()->constrained()->default(null);
             $table->foreignId('payment_id')->nullable()->constrained()->default(null);
-            $table->integer('discount')->default(0);
             $table->integer('total');
             $table->string('status')->default(OrderStatus::PENDING->value);
             $table->timestamps();
