@@ -2,9 +2,10 @@
 
 namespace App\Models;
 
+use App\Models\Sku;
 use App\Models\User;
-use App\Models\Address;
 use App\Models\Coupon;
+use App\Models\Address;
 use App\Models\Payment;
 use App\Models\Product;
 use Illuminate\Database\Eloquent\Model;
@@ -19,7 +20,6 @@ class Order extends Model
         'address_id',
         'coupon_id',
         'payment_id',
-        'discount',
         'status',
         'total',
     ];
@@ -44,8 +44,8 @@ class Order extends Model
         return $this->belongsTo(Payment::class);
     }
 
-    public function products(): BelongsToMany
+    public function skus()
     {
-        return $this->belongsToMany(Product::class)->withPivot('quantity');
+        return $this->belongsToMany(Sku::class)->withPivot('quantity');
     }
 }

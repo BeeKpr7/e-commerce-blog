@@ -20,10 +20,10 @@
         <hr>
         <div class="content">
             <figure class="">
-                <img
-                    @if (!str_contains($post->image, 'http')) src="{{ asset('storage/' . $post->image) }}"
+                <img @if (!str_contains($post->image, 'http')) src="{{ asset('storage/' . $post->image) }}"
                     @else
-                        src="{{ $post->image }}" @endif />
+                        src="{{ $post->image }}" @endif
+                    alt="{{ $post->title }}" />
                 <figcaption class="">
                     {{ __('post.infos.published') }} <time>{{ $post->created_at->diffForHumans() }}</time>
                 </figcaption>
