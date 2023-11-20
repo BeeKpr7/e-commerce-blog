@@ -914,12 +914,8 @@ footer p a {
     }
     & .category {
         display: flex;
-        justify-content: center;
         gap: 2rem;
-        position: absolute;
-        bottom: 1rem;
-        left: 4rem;
-
+        margin-top: 2rem;
         & a {
             position: initial;
         }
