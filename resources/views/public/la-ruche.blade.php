@@ -3,7 +3,7 @@
 @section('description',
     'La miellerie de Morgan Jaubert, apiculteur récoltant, situé à Fouillouse dans les
     Hautes-Alpes')
-@section('title', 'La ruche | Apie De Lop')
+@section('title', 'La ruche')
 @section('link')
     <script src="{{ url('') }}/front/js/mielsModal.js" defer></script>
 @endsection

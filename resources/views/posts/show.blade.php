@@ -1,4 +1,6 @@
 @extends('public.main')
+@section('title', $post->title)
+@section('description', $post->excerpt)
 @section('content')
     <section class="firstview firstviewAjust ">
         <aside>

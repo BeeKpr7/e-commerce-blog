@@ -2,7 +2,7 @@
 
 
 @section('description', 'Retrouvez : les conditions d\'utilisateurs, Services fournis, donnés personnelles ..')
-@section('title', 'Mentions légales | Apie De Lop')
+@section('title', 'Mentions légales')
 
 @section('content')
 

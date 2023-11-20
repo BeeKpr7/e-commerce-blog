@@ -1,7 +1,7 @@
 @extends('public.main')
 
 @section('description', 'Par téléphone, email ou encore sur les marchées n\'hésitez pas à nous contactez.')
-@section('title', 'Contactez-Nous | Apie De Lop')
+@section('title', 'Contactez-Nous')
 @section('link')
     {!! RecaptchaV3::initJs() !!}
 @endsection

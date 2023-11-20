@@ -1,8 +1,9 @@
 @extends('public.main')
 
-@section('description', 'Cette exploitation gérée par Morgan Jaubert, est issue de plusieurs générations d\'expériences.
+@section('description',
+    'Cette exploitation gérée par Morgan Jaubert, est issue de plusieurs générations d\'expériences.
     Il a la chance de vivre dans un environnement encore épargné par diverses pollutions.')
-@section('title', 'Notre histoire | Apie De Lop')
+@section('title', 'Notre histoire')
 
 @section('content')
 

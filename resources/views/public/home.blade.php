@@ -3,7 +3,7 @@
 @section('description',
     'Cette exploitation gérée par Morgan Jaubert, issue de plusieurs générations
     d\'expériences, propose tout un éventail de miel issue de différent territoir.')
-@section('title', 'Apie De Lop | Apiculteur Récoltant entre Provence et Alpes du sud')
+@section('title', 'Apiculteur Récoltant')
 
 @section('content')
 

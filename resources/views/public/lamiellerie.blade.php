@@ -3,7 +3,7 @@
 @section('description',
     'Nous produisons des cuvées d\'exception que nous mettons en pots, suivant une technique qui
     rend le miel ultra crémeux.')
-@section('title', 'La Miellerie | Apie De Lop')
+@section('title', 'La Miellerie')
 @section('link')
     <script src="{{ url('') }}/front/js/mielsModal.js" defer></script>
     @livewireStyles
