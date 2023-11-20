@@ -28,7 +28,7 @@ class Variant extends Component
         $this->validate();
 
         $this->product->skus()->create([
-            'price' => $this->price,
+            'price' => $this->price*100,
             'stock' => $this->stock,
             'weight' => $this->weight,
         ]);

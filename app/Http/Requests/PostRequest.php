@@ -33,6 +33,7 @@ class PostRequest extends FormRequest
             'excerpt' => ['required'],
             'image' => request()->isMethod('post') ? 'required|image' : 'image',
             'body' => ['required'],
+            'categories' => ['required', 'array'],
             'categories.*' => ['required', 'exists:categories,id'],
             'slug' => '',
             'user_id' => ''
