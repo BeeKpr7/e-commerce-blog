@@ -1,7 +1,9 @@
 <?php
 
-use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\SkuController;
+use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\Admin\PostController;
 use App\Http\Controllers\Admin\ProductController;
 
@@ -9,6 +11,8 @@ use App\Http\Controllers\Admin\ProductController;
 Route::prefix('admin')->middleware('can:admin','auth')->group(function(){
     Route::resource('posts', PostController::class)->except('show');
     Route::resource('products', ProductController::class)->except('show');
+    Route::resource('skus', SkuController::class)->except('show');
+    Route::resource('categories', CategoryController::class)->except('show');
 });
 
 // Route::get('/dashboard', function () {

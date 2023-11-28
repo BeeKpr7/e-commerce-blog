@@ -1,12 +1,23 @@
 <x-layout>
-    <x-setting title="{{ __('Create new product') }}">
+    <x-setting title="{{ __('product.infos.create') }}">
         <!-- Don't forget multipart/form-data for input files !!! -->
         <form action="{{ route('products.store') }}" method="POST" enctype="multipart/form-data">
             @csrf
+
+            @if ($errors->any())
+                <div class="flex justify-end mb-4 col-span-full">
+                    <div>
+                        @foreach ($errors->all() as $error)
+                            <p class="text-error-50 ">{{ $error }}</p>
+                        @endforeach
+                    </div>
+                </div>
+            @endif
             <div class="space-y-4 md:space-y-6">
 
                 <x-form.input name="name" />
-                <x-form.textarea name="description" />
+                <x-form.input name="place" />
+                <x-form.textarea name="description">{{ old('description') ?? '' }}</x-form.textarea>
                 <x-form.input name="image" type="file" />
 
                 <x-form.field name="category_id">

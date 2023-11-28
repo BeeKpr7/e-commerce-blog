@@ -15,9 +15,7 @@ class ProductController extends Controller
 
     public function index()
     {
-        // $products = Product::active()->paginate(5);
-
-        $products = DB::select('select * from products where active = ?', ["active"]);
+        $products = Product::active()->paginate(5);
         
         return view('products.index', compact('products'));
     }

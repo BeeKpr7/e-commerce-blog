@@ -19,7 +19,7 @@ return new class extends Migration
             $table->string('place');
             $table->string('image')->nullable();
             $table->string('slug');
-            $table->foreignId('category_id')->constrained();
+            $table->foreignId('category_id')->constrained()->cascadeOnDelete();
             $table->string('status')->default(ProductStatus::INACTIVE->value);
             $table->timestamps();
         });

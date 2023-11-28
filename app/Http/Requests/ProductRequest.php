@@ -2,9 +2,11 @@
 
 namespace App\Http\Requests;
 
+
 use Illuminate\Support\Str;
 use App\Enums\ProductStatus;
 use Illuminate\Validation\Rule;
+use Illuminate\Validation\Rules\File;
 use Illuminate\Foundation\Http\FormRequest;
 
 class ProductRequest extends FormRequest
@@ -29,11 +31,13 @@ class ProductRequest extends FormRequest
             $rule_name_unique->ignore($this->product->id);
         }
 
+        $rule_image = File::image()->min('1kb')->max('4mb');
+
         return [
             'name' => ['required', 'min:6', 'max:255', $rule_name_unique],
             'description' => ['required'],
             'place' => ['required', 'min:6', 'max:255'],
-            'image' => request()->isMethod('post') ? 'required|image' : 'image',
+            'image' => [request()->isMethod('post') ? 'required' : '', $rule_image],
             'category_id' => ['required', 'exists:categories,id'],
             'status' => '',
             'slug' => '',

@@ -6,9 +6,9 @@
                 href="{{ route('posts.create') }}">{{ __('post.title.create') }}</a>
         </div>
 
-        <div class="relative overflow-x-auto shadow-lg sm:rounded-lg">
+        <div class="relative rounded-lg shadow-lg">
 
-            <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
+            <table class="w-full text-sm text-left text-gray-500 rounded-lg dark:text-gray-400">
 
                 <tbody>
                     @foreach ($posts as $post)

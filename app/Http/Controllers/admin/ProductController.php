@@ -13,9 +13,7 @@ class ProductController extends Controller
     public function __construct(
         private ProductService $productService
     )
-    {
-        $this->middleware(['auth','can:admin']);
-    }
+    {}
     /**
      * Display a listing of the resource.
      */
@@ -71,7 +69,7 @@ class ProductController extends Controller
     {
         $this->productService->update($product, $request->validated());
 
-        return redirect('/admin/products')->with('success','Product updated successfully');
+        return redirect('/admin/products')->with('success', __('product.infos.added'));
     }
 
     /**
@@ -81,6 +79,6 @@ class ProductController extends Controller
     {
         $this->productService->destroy($product);
 
-        return back()->with('success','Product deleted successfully');
+        return back()->with('success', __('product.infos.deleted'));
     }
 }

@@ -61,6 +61,9 @@ class SkuController extends Controller
      */
     public function destroy(Sku $sku)
     {
-        //
+        $sku->delete();
+
+        return back()->with('success','Variant deleted successfully');
+
     }
 }

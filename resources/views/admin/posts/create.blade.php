@@ -1,5 +1,5 @@
 <x-layout>
-    <x-setting title="{{ __('Create new post') }}">
+    <x-setting title="{{ __('post.infos.create') }}">
         <!-- Don't forget multipart/form-data for input files !!! -->
         <form action="{{ route('posts.store') }}" method="POST" enctype="multipart/form-data">
             @csrf

@@ -1,9 +1,9 @@
 <x-layout>
-    <x-setting title="{{ __('product.title.manage') }}">
+    <x-setting title="{{ __('category.title.manage') }}">
 
         <div class="pb-2">
             <a class="px-4 py-3 font-semibold text-white rounded-lg shadow-md bg-amber-500 hover:bg-opacity-70 hover:shadow-lg"
-                href="{{ route('products.create') }}">{{ __('product.title.create') }}</a>
+                href="{{ route('categories.create') }}">{{ __('category.title.create') }}</a>
 
         </div>
 
@@ -11,19 +11,15 @@
             <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
 
                 <tbody>
-                    @foreach ($products as $product)
+                    @foreach ($categories as $category)
                         <tr class="bg-white border-b dark:bg-gray-900 dark:border-gray-700">
                             <th scope="row"
                                 class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                                <a href="{{ route('lamiellerie') }}">
-                                    {{ ucwords($product->name) }}
+                                <a href="#">
+                                    {{ ucwords($category->name) }}
                                 </a>
                             </th>
-                            <td class="px-6 py-4">
-                                <x-badge :color="$product->status->color()">
-                                    {{ $product->status->label() }}
-                                </x-badge>
-                            </td>
+
                             <td @click.away="open = false" class="relative" x-data="{ open: false }">
                                 <button @click="open = !open"
                                     class="px-6 py-4 font-medium text-amber-500 dark:text-blue-700 hover:underline focus:outline-none">
@@ -37,12 +33,12 @@
                                 <ul class="absolute top-0 z-50 p-4 mt-12 space-y-3 font-medium text-gray-500 -translate-x-1/2 bg-gray-100 rounded-lg shadow-lg text-md dark:text-gray-400 dark:bg-gray-700"
                                     x-show="open">
                                     <li class="">
-                                        <a href="{{ route('products.edit', $product) }}"
+                                        <a href="{{ route('categories.edit', $category) }}"
                                             class="font-medium text-blue-500 dark:text-blue-700 hover:underline">{{ __('form.button.edit') }}</a>
                                     </li>
                                     <li class="">
 
-                                        <form method="POST" action="{{ route('products.destroy', $product) }}">
+                                        <form method="POST" action="{{ route('categories.destroy', $category) }}">
                                             @csrf
                                             @method('DELETE')
                                             <button
@@ -56,6 +52,6 @@
                 </tbody>
             </table>
         </div>
-        {{ $products->links() }}
+        {{ $categories->links() }}
     </x-setting>
 </x-layout>

@@ -36,7 +36,7 @@ class PostController extends Controller
     {   
         $this->postService->store($request->validated());
 
-        return redirect('/admin/posts')->with('success','Post created successfully');
+        return redirect('/admin/posts')->with('success',__('post.infos.added'));
     }
 
     public function edit(Post $post)
@@ -56,7 +56,7 @@ class PostController extends Controller
     {
         $this->postService->destroy($post);
 
-        return back()->with('success','Post deleted successfully');
+        return back()->with('success',__('post.infos.deleted'));
     }
 
 }

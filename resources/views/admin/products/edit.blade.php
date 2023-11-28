@@ -61,7 +61,7 @@
 
 
                 <div class="flex justify-center">
-                    <x-form.button>Update a Product</x-form.button>
+                    <x-form.button>{{ __('product.title.edit') }}</x-form.button>
                 </div>
             </div>
         </form>
@@ -69,19 +69,19 @@
         <div class="flex flex-col items-center space-y-4">
             <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
                 <tbody>
-                    @foreach ($product->skus as $variant)
+                    @foreach ($product->skus as $sku)
                         <tr class="bg-white border-b dark:bg-gray-900 dark:border-gray-700">
                             <td class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                                {{ $variant->name }}
+                                {{ $sku->name }}
                             </td>
                             <td class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                                {{ $variant->weight }} g
+                                {{ $sku->weight }} g
                             </td>
                             <td class="px-6 py-4 text-center">
-                                {{ $variant->stock }} Units
+                                {{ $sku->stock }} Units
                             </td>
                             <td class="px-6 py-4 text-right">
-                                {{ $variant->price }} euros
+                                {{ Illuminate\Support\Number::currency($sku->price / 100, in: 'EUR') }}
                             </td>
                             <td @click.away="open = false" class="relative" x-data="{ open: false }">
                                 <button type="button" @click="open = !open"
@@ -101,7 +101,7 @@
                                     </li>
                                     <li class="">
 
-                                        <form method="POST" action="{{ route('products.destroy', $product) }}">
+                                        <form method="POST" action="{{ route('skus.destroy', $sku) }}">
                                             @csrf
                                             @method('DELETE')
                                             <button
